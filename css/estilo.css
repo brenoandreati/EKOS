@@ -337,12 +337,15 @@ button { font: inherit; }
 
 /* ---------- 1 · Hero: o céu do cartaz ---------- */
 .hero {
-  /* Altura da faixa da casa = altura natural da imagem (1080 × 459) até 600px: a casa nunca é cortada */
-  --casa-h: clamp(200px, 42.5vw, 600px);
+  /* Faixa da foto da casa (1254 × 1254). --casa-ancora = altura da linha das montanhas
+     dentro da faixa; --casa-escala = largura da foto em relação à tela (zoom no celular). */
+  --casa-h: clamp(300px, 56vw, 820px);
+  --casa-ancora: .26;
+  --casa-escala: 1;
   position: relative; isolation: isolate; overflow: hidden;
   display: flex; flex-direction: column;
   padding-top: calc(var(--topo-h) + env(safe-area-inset-top, 0px));
-  padding-bottom: calc(var(--casa-h) * .8);
+  padding-bottom: calc(var(--casa-h) * (1 - var(--casa-ancora)) + 1rem);
   background: linear-gradient(180deg, var(--ceu) 0%, var(--ceu) 60%, var(--ceu-medio) 72%, var(--ceu-claro) 82%, var(--ceu-nevoa) 91%, var(--ceu-horizonte) 100%);
   color: var(--papel);
 }
@@ -350,20 +353,30 @@ button { font: inherit; }
 .hero__midia > video, .hero__midia > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero__sombra { display: none; position: absolute; inset: 0; z-index: -3; background: linear-gradient(180deg, rgb(0 116 170 / .55) 0%, rgb(0 116 170 / .35) 45%, rgb(0 116 170 / .8) 100%); }
 .hero__casa {
-  position: absolute; z-index: -1; left: 0; right: 0; bottom: 0;
+  position: absolute; z-index: -2; left: 0; right: 0; bottom: 0;
   height: var(--casa-h);
   overflow: hidden; pointer-events: none;
-  /* Campo contínuo nas laterais quando a tela é mais larga que a imagem */
-  background: url("../assets/img/oikos/campo.webp") left bottom / auto 50.3% repeat-x;
+  container-type: size;
+  /* O céu da foto se dissolve no azul do cartaz acima das montanhas */
+  -webkit-mask: linear-gradient(180deg, #0000 0%, #000 calc(var(--casa-ancora) * 92%));
+          mask: linear-gradient(180deg, #0000 0%, #000 calc(var(--casa-ancora) * 92%));
 }
 .hero__casa img {
-  position: absolute; bottom: 0; left: 56%;
-  width: auto; max-width: none; height: 100%;
-  transform: translateX(-56%);
-  -webkit-mask: linear-gradient(90deg, #0000, #000 6%, #000 94%, #0000);
-          mask: linear-gradient(90deg, #0000, #000 6%, #000 94%, #0000);
+  /* A linha das montanhas (49% da foto) fica na altura --casa-ancora; a casa (x ≈ 56%) fica centralizada sem abrir vão nas laterais */
+  --foto-l: calc(var(--casa-escala) * 100vw);
+  position: absolute; max-width: none; height: auto;
+  width: var(--foto-l);
+  top: calc(var(--casa-h) * var(--casa-ancora) - .49 * var(--foto-l));
+  left: clamp(calc(100vw - var(--foto-l)), calc(50vw - .56 * var(--foto-l)), 0px);
 }
-.hero__tres-grande { position: absolute; z-index: -2; pointer-events: none; right: -14vw; bottom: calc(var(--casa-h) * .22); width: min(78vw, 680px); aspect-ratio: 1; }
+@supports (width: 1cqw) {
+  .hero__casa img {
+    --foto-l: calc(var(--casa-escala) * 100cqw);
+    top: calc(var(--casa-ancora) * 100cqh - .49 * var(--foto-l));
+    left: clamp(calc(100cqw - var(--foto-l)), calc(50cqw - .56 * var(--foto-l)), 0px);
+  }
+}
+.hero__tres-grande { position: absolute; z-index: -1; pointer-events: none; right: -6vw; bottom: calc(var(--casa-h) * (1 - var(--casa-ancora)) - 3vw); width: min(32vw, 480px); aspect-ratio: 1; }
 .hero__tres-grande img { position: absolute; height: auto; }
 .hero__anel { width: 118%; left: -9%; top: 18%; transform: rotate(-14deg); }
 .hero__tres-img { width: 78%; left: 8%; top: 12%; }
@@ -418,7 +431,12 @@ button { font: inherit; }
 }
 .hero__dados li .pend { margin-left: .4rem; }
 .hero__botoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.9rem; }
-@media (max-width: 559px) { .hero__botoes .btn { flex: 1 1 100%; } }
+@media (max-width: 559px) {
+  .hero__botoes .btn { flex: 1 1 100%; }
+}
+/* Botão secundário com fundo próprio: continua legível sobre o céu claro da foto */
+.hero .btn--contorno { background: var(--azul); border-color: var(--papel); color: var(--papel); }
+.hero .btn--contorno:hover { background: var(--papel); color: var(--azul); }
 .hero__pausa {
   position: absolute; z-index: 2;
   right: max(16px, env(safe-area-inset-right, 0px)); bottom: 1.25rem;
@@ -431,13 +449,16 @@ button { font: inherit; }
   .hero__centro { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3rem; margin-top: 0; }
   .hero__texto { grid-column: 1; grid-row: 1; }
   .hero__bilhete { grid-column: 2; grid-row: 1; justify-self: start; width: 108%; max-width: 800px; margin-top: -3rem; }
-  .hero__tres-grande { right: -9vw; bottom: calc(var(--casa-h) * .3); width: min(44vw, 700px); }
+  .hero__tres-grande { right: -5vw; width: min(30vw, 470px); }
 }
 .hero__tres { display: none; }
 @media (max-width: 999px) {
   .hero__tres-grande { display: none; }
   .hero__tres { display: block; position: absolute; z-index: 1; width: 22%; height: auto; right: -2%; top: -14%; transform: rotate(-8deg); filter: drop-shadow(0 10px 16px rgb(10 26 43 / .3)); }
-  .hero { --casa-h: clamp(240px, 42.5vw, 600px); padding-bottom: calc(var(--casa-h) * 1.08); }
+  .hero { --casa-h: 56vw; --casa-ancora: .3; --casa-escala: 1.1; }
+}
+@media (max-width: 559px) {
+  .hero { --casa-h: 102vw; --casa-ancora: .34; --casa-escala: 1.35; }
 }
 
 /* ---------- Ingresso de informações (eco do bilhete oficial) ---------- */
