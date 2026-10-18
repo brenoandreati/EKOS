@@ -450,6 +450,12 @@ button { font: inherit; }
   .hero__texto { grid-column: 1; grid-row: 1; }
   .hero__bilhete { grid-column: 2; grid-row: 1; justify-self: start; width: 108%; max-width: 800px; margin-top: -3rem; }
   .hero__tres-grande { right: -5vw; width: min(30vw, 470px); }
+  /* No computador a faixa da foto cabe inteira na tela: céu, casa completa e grama visíveis juntos */
+  .hero {
+    --casa-h: clamp(380px, min(48vw, calc(100vh - var(--topo-h) - 24px)), 1240px);
+    --casa-h: clamp(380px, min(48vw, calc(100svh - var(--topo-h) - 24px)), 1240px);
+    --casa-ancora: .22;
+  }
 }
 .hero__tres { display: none; }
 @media (max-width: 999px) {
