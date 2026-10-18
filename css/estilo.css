@@ -337,19 +337,32 @@ button { font: inherit; }
 
 /* ---------- 1 · Hero: o céu do cartaz ---------- */
 .hero {
-  --casa-h: clamp(210px, 30vw, 440px);
+  /* Altura da faixa da casa = altura natural da imagem (1080 × 459) até 600px: a casa nunca é cortada */
+  --casa-h: clamp(200px, 42.5vw, 600px);
   position: relative; isolation: isolate; overflow: hidden;
   display: flex; flex-direction: column;
   padding-top: calc(var(--topo-h) + env(safe-area-inset-top, 0px));
-  padding-bottom: calc(var(--casa-h) * .72);
+  padding-bottom: calc(var(--casa-h) * .8);
   background: linear-gradient(180deg, var(--ceu) 0%, var(--ceu) 60%, var(--ceu-medio) 72%, var(--ceu-claro) 82%, var(--ceu-nevoa) 91%, var(--ceu-horizonte) 100%);
   color: var(--papel);
 }
 .hero__midia { position: absolute; inset: 0; z-index: -4; }
 .hero__midia > video, .hero__midia > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero__sombra { display: none; position: absolute; inset: 0; z-index: -3; background: linear-gradient(180deg, rgb(0 116 170 / .55) 0%, rgb(0 116 170 / .35) 45%, rgb(0 116 170 / .8) 100%); }
-.hero__casa { position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: var(--casa-h); pointer-events: none; }
-.hero__casa img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 100%; }
+.hero__casa {
+  position: absolute; z-index: -1; left: 0; right: 0; bottom: 0;
+  height: var(--casa-h);
+  overflow: hidden; pointer-events: none;
+  /* Campo contínuo nas laterais quando a tela é mais larga que a imagem */
+  background: url("../assets/img/oikos/campo.webp") left bottom / auto 50.3% repeat-x;
+}
+.hero__casa img {
+  position: absolute; bottom: 0; left: 56%;
+  width: auto; max-width: none; height: 100%;
+  transform: translateX(-56%);
+  -webkit-mask: linear-gradient(90deg, #0000, #000 6%, #000 94%, #0000);
+          mask: linear-gradient(90deg, #0000, #000 6%, #000 94%, #0000);
+}
 .hero__tres-grande { position: absolute; z-index: -2; pointer-events: none; right: -14vw; bottom: calc(var(--casa-h) * .22); width: min(78vw, 680px); aspect-ratio: 1; }
 .hero__tres-grande img { position: absolute; height: auto; }
 .hero__anel { width: 118%; left: -9%; top: 18%; transform: rotate(-14deg); }
@@ -424,7 +437,7 @@ button { font: inherit; }
 @media (max-width: 999px) {
   .hero__tres-grande { display: none; }
   .hero__tres { display: block; position: absolute; z-index: 1; width: 22%; height: auto; right: -2%; top: -14%; transform: rotate(-8deg); filter: drop-shadow(0 10px 16px rgb(10 26 43 / .3)); }
-  .hero { padding-bottom: calc(var(--casa-h) * .98); }
+  .hero { --casa-h: clamp(240px, 42.5vw, 600px); padding-bottom: calc(var(--casa-h) * 1.08); }
 }
 
 /* ---------- Ingresso de informações (eco do bilhete oficial) ---------- */
