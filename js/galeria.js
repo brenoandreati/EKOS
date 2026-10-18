@@ -13,6 +13,7 @@
   var CATEGORIAS = {
     oracao: "Oração",
     louvor: "Louvor e música",
+    pregacao: "Pregações",
     artes: "Artes e interlúdios",
     convivencia: "Convivência",
     bastidores: "Bastidores",
@@ -91,6 +92,11 @@
       }
       return;
     }
+
+    if (itens.some(function (it) { return !it.edicao; })) {
+      O.pendente("Edição das fotos da galeria", "Informar de qual edição do OIKOS ou encontro do grupo são as fotos (campo \"edicao\" de cada item em galeria.itens).", "#galeria");
+    }
+    O.pendente("Mais fotos e vídeos para a galeria", "A galeria tem 4 fotos. Novas mídias (oração, louvor, artes, convivência, bastidores, vídeos e Reels) entram em galeria.itens.", "#galeria");
 
     var estado = { categoria: "", edicao: "" };
     var visiveis = itens.slice();

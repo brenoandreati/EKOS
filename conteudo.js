@@ -180,10 +180,18 @@ window.OIKOS = {
   },
 
   midias: {
-    oikos:       { tipo: "foto", src: "", alt: "", legenda: "" },  // seção "O que é o OIKOS"
-    grupo:       { tipo: "foto", src: "", alt: "", legenda: "" },  // seção "Hebreus Onze"
-    pregacao:    { tipo: "foto", src: "", poster: "", alt: "" },   // pilar: Pregações e dimensões
-    dinamicas:   { tipo: "foto", src: "", poster: "", alt: "" },   // pilar: Dinâmicas de grupo
+    // seção "O que é o OIKOS"
+    oikos:       { tipo: "foto", src: "assets/img/fotos/oikos-louvor.webp",
+                   alt: "Jovem de olhos fechados e mãos levantadas em momento de louvor, com outros participantes ao fundo.", legenda: "" },
+    // seção "Hebreus Onze"
+    grupo:       { tipo: "foto", src: "assets/img/fotos/hebreus-onze-jovens.webp",
+                   alt: "De costas, jovem com a camiseta \"Jovens, se fores aquilo que Deus quer, colocareis fogo no mundo!\" diante dos participantes sentados no chão.", legenda: "" },
+    // pilar: Pregações e dimensões
+    pregacao:    { tipo: "foto", src: "assets/img/fotos/pilar-pregacao.webp", poster: "",
+                   alt: "Pregador sorri ao microfone e aponta para o público, com o telão iluminado ao fundo." },
+    // pilar: Dinâmicas de grupo
+    dinamicas:   { tipo: "foto", src: "assets/img/fotos/pilar-dinamicas.webp", poster: "",
+                   alt: "Dois jovens se abraçam durante o encontro; um deles veste a camiseta do Hebreus Onze com a ilustração de uma casa." },
     artes:       { tipo: "foto", src: "", poster: "", alt: "" },   // pilar: Artes
     audiovisual: { tipo: "foto", src: "", poster: "", alt: "" },   // pilar: Experiência audiovisual
   },
@@ -193,7 +201,7 @@ window.OIKOS = {
      Para adicionar uma mídia, copie um dos modelos abaixo para dentro de
      "itens", tire as barras // do começo e ajuste os campos.
 
-     categoria: "oracao" | "louvor" | "artes" | "convivencia" | "bastidores"
+     categoria: "oracao" | "louvor" | "pregacao" | "artes" | "convivencia" | "bastidores"
      formato:   "vertical" | "horizontal" | "quadrado" | "destaque"
      edicao:    ano da edição (ex.: "2025"), para preservar os registros
 
@@ -211,6 +219,19 @@ window.OIKOS = {
     // false: o Reel abre no Instagram, em outra aba.
     incorporarReels: true,
     itens: [
+      // Fotos da pasta "DOMINGO" (equipe de mídias). Preencha "edicao" quando souber de qual edição/encontro são.
+      { tipo: "foto", src: "assets/galeria/louvor.webp", miniatura: "assets/galeria/louvor-p.webp",
+        alt: "Jovem de olhos fechados e mãos levantadas em momento de louvor, com outros participantes ao fundo.",
+        legenda: "", categoria: "louvor", formato: "vertical", edicao: "" },
+      { tipo: "foto", src: "assets/galeria/pregacao.webp", miniatura: "assets/galeria/pregacao-p.webp",
+        alt: "Pregador sorri ao microfone e aponta para o público, com o telão iluminado ao fundo.",
+        legenda: "", categoria: "pregacao", formato: "vertical", edicao: "" },
+      { tipo: "foto", src: "assets/galeria/abraco.webp", miniatura: "assets/galeria/abraco-p.webp",
+        alt: "Dois jovens se abraçam; um deles veste a camiseta do Hebreus Onze com a frase \"Jovens, se fores aquilo que Deus quer, colocareis fogo no mundo!\".",
+        legenda: "", categoria: "convivencia", formato: "vertical", edicao: "" },
+      { tipo: "foto", src: "assets/galeria/jovens.webp", miniatura: "assets/galeria/jovens-p.webp",
+        alt: "De costas, jovem com a camiseta do Hebreus Onze diante dos participantes sentados no chão.",
+        legenda: "", categoria: "pregacao", formato: "vertical", edicao: "" },
     ],
   },
 
