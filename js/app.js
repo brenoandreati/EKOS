@@ -28,8 +28,20 @@
     f.formatToParts(d).forEach(function (p) { o[p.type] = p.value; });
     return o;
   }
+  /** Dia do calendário em São Paulo, como número de dias desde 1970 (para contar dias inteiros). */
+  function diaLocal(d) {
+    var p = new Intl.DateTimeFormat("en-CA", { timeZone: FUSO, year: "numeric", month: "2-digit", day: "2-digit" }).format(d).split("-");
+    return Math.round(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 864e5);
+  }
+  /** "20, 21 e 22 de novembro de 2026" (como no cartaz) ou "20 a 28 de novembro de 2026". */
   function intervaloDatas(a, b) {
     var pa = partes(a), pb = partes(b);
+    var dias = diaLocal(b) - diaLocal(a);
+    if (pa.month === pb.month && pa.year === pb.year && dias >= 1 && dias <= 3) {
+      var lista = [];
+      for (var i = 0; i <= dias; i++) lista.push(String(+pa.day + i));
+      return lista.slice(0, -1).join(", ") + " e " + lista[lista.length - 1] + " de " + pa.month + " de " + pa.year;
+    }
     if (pa.month === pb.month && pa.year === pb.year) return pa.day + " a " + pb.day + " de " + pa.month + " de " + pa.year;
     if (pa.year === pb.year) return pa.day + " de " + pa.month + " a " + pb.day + " de " + pb.month + " de " + pa.year;
     return pa.day + "/" + pa.month + "/" + pa.year + " a " + pb.day + "/" + pb.month + "/" + pb.year;
@@ -43,6 +55,12 @@
   var inscricao = C.inscricao || {};
   var contato = C.contato || {};
   var edicao = C.edicao || {};
+
+  /* ===================== Lema da edição (fita) ===================== */
+  if (!vazio(C.lema)) {
+    $$("[data-lema]").forEach(function (n) { n.textContent = C.lema; });
+    $$("[data-lema-svg]").forEach(function (n) { n.textContent = String(C.lema).toLocaleUpperCase("pt-BR"); });
+  }
 
   /* ===================== Aviso no topo ===================== */
   (function aviso() {
@@ -158,8 +176,7 @@
   /* ===================== Datas, horários e informações ===================== */
   var marcadorData = null;
   if (!dataOk) {
-    var detalheData = "Datas desta edição ainda não confirmadas" +
-      (vazio(datas.informadaPelaEquipe) ? "." : " (informado: " + datas.informadaPelaEquipe + ").") +
+    var detalheData = "Datas desta edição ainda não confirmadas. Preencha datas.inicio e datas.fim e mude datas.confirmada para true." +
       (vazio(datas.observacao) ? "" : " " + datas.observacao);
     var tituloData = "Datas a confirmar" + (vazio(datas.informadaPelaEquipe) ? "" : " (informado: " + datas.informadaPelaEquipe + ")");
     marcadorData = function () { return O.pendente(tituloData, detalheData, "#informacoes"); };
@@ -180,6 +197,21 @@
   };
   preencher("inicio", vazio(horarios.inicio) ? "A divulgar" : horarios.inicio, horarioPend);
   preencher("termino", vazio(horarios.termino) ? "A divulgar" : horarios.termino, null);
+
+  (function dadosDoTopo() {
+    var liLocal = $("[data-hero-local]");
+    if (liLocal) {
+      if (local.confirmado && !vazio(local.nome)) $('[data-campo="local-nome"]', liLocal).textContent = local.nome;
+      else if (O.revisao) { $('[data-campo="local-nome"]', liLocal).textContent = "a divulgar "; }
+      else liLocal.hidden = true;
+    }
+    var liPublico = $("[data-hero-publico]");
+    if (liPublico) {
+      var pub = String(inscricao.publico || "").trim();
+      if (pub) $('[data-campo="publico"]', liPublico).textContent = pub.charAt(0).toLocaleLowerCase("pt-BR") + pub.slice(1) + "!";
+      else liPublico.hidden = true;
+    }
+  })();
 
   (function pessoas() {
     var p = ler("numeros.pessoasEnvolvidas") || {};
@@ -226,7 +258,10 @@
       var mapa = linkSeguro(local.mapa);
       var a = mapa ? el("a", { class: "info-link", href: mapa, target: "_blank", rel: "noopener noreferrer" }, icone("i-pin"), "Ver no mapa") : null;
       var nota = [local.endereco, local.cidade].filter(function (x) { return !vazio(x); }).join(" · ");
-      campo("Local", local.nome, { nota: nota, link: a, largo: true });
+      campo("Local", local.nome, {
+        nota: nota, link: a, largo: true,
+        pend: vazio(local.endereco) || !mapa ? function () { return O.pendente("Endereço e mapa do local", "Informar o endereço completo e o link do Google Maps da " + local.nome + " (local.endereco e local.mapa).", "#informacoes"); } : null,
+      });
     } else {
       campo("Local", "A divulgar", { largo: true, pend: function () { return O.pendente("Local do retiro", "Informar nome, endereço e link do mapa do local (conteudo.js → local).", "#informacoes"); } });
     }
@@ -234,7 +269,7 @@
     if (!vazio(inscricao.publico)) {
       campo("Público", inscricao.publico, { nota: vazio(inscricao.criterios) ? "" : inscricao.criterios });
     }
-    if (vazio(inscricao.criterios)) {
+    if (vazio(inscricao.criterios) && !/\d/.test(inscricao.publico || "")) {
       O.pendente("Critérios de participação", "Informar idade mínima, autorização dos responsáveis e outros critérios, se houver (inscricao.criterios).", "#informacoes");
     }
 
@@ -274,20 +309,22 @@
     }
   })();
 
-  /* Contador regressivo: só com data confirmada */
-  (function contador() {
-    var box = $("[data-contador]");
+  /* Contagem regressiva "FALTAM X DIAS": só com data confirmada e antes do retiro */
+  (function contagem() {
+    var box = $("[data-contagem]");
     if (!box || !dataOk || C.fase !== "antes") return;
-    var d = $("[data-contador-dias]", box), h = $("[data-contador-horas]", box), m = $("[data-contador-min]", box);
-    function tick() {
-      var resta = inicio.getTime() - Date.now();
+    var num = $("[data-contador-dias]", box), faltam = $("[data-contagem-faltam]", box);
+    var diasTxt = $("[data-contagem-dias]", box), sr = $("[data-contagem-texto]", box);
+    function atualizar() {
+      var resta = diaLocal(inicio) - diaLocal(new Date());
       if (resta <= 0) { box.hidden = true; return false; }
-      d.textContent = Math.floor(resta / 864e5);
-      h.textContent = Math.floor(resta / 36e5) % 24;
-      m.textContent = Math.floor(resta / 6e4) % 60;
+      num.textContent = String(resta);
+      faltam.textContent = resta === 1 ? "Falta" : "Faltam";
+      diasTxt.textContent = resta === 1 ? "dia" : "dias";
+      sr.textContent = (resta === 1 ? "Falta 1 dia" : "Faltam " + resta + " dias") + " para o OIKOS.";
       return true;
     }
-    if (tick()) { box.hidden = false; setInterval(tick, 30000); }
+    if (atualizar()) { box.hidden = false; setInterval(atualizar, 60 * 60 * 1000); }
   })();
 
   /* Dados estruturados do evento (só com data e local confirmados) */
@@ -577,7 +614,7 @@
         else if (!e.shiftKey && i === itens.length - 1) { e.preventDefault(); itens[0].focus(); }
       }
     });
-    window.matchMedia("(min-width: 1100px)").addEventListener("change", function (m) { if (m.matches) fechar(false); });
+    window.matchMedia("(min-width: 1240px)").addEventListener("change", function (m) { if (m.matches) fechar(false); });
   })();
 
   /* Link ativo conforme a seção visível */

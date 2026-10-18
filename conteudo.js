@@ -35,8 +35,12 @@ window.OIKOS = {
 
   edicao: {
     numero: "III",                   // número da edição (arte oficial: "III EDIÇÃO")
-    ano: null,                       // ex.: 2026 (aparece no ingresso)
+    ano: 2026,                       // aparece no ingresso
   },
+
+  /* Lema da edição (fita vermelha do cartaz oficial) */
+  lema: "OIKOS: onde Ele habita. E o que estava perdido, volta para casa.",
+
 
   /* -------------------------------------------------------------------
      DATAS DA EDIÇÃO
@@ -45,13 +49,9 @@ window.OIKOS = {
      contador regressivo é ativado.
      ------------------------------------------------------------------- */
   datas: {
-    confirmada: false,
-    inicio: "",                      // ex.: "2026-12-18T19:30:00-03:00"
-    fim: "",                         // ex.: "2026-12-20T18:00:00-03:00"
-
-    // Uso interno (só aparece no modo revisão):
-    informadaPelaEquipe: "20, 21 e 22 de dezembro",
-    observacao: "Validar o ano. Em 2026, os dias 20, 21 e 22 de dezembro caem de domingo a terça; o formato habitual do retiro é de sexta a domingo (em 2026, seria 18 a 20 de dezembro).",
+    confirmada: true,                // confirmado no cartaz oficial: 20, 21 e 22 de novembro de 2026
+    inicio: "2026-11-20T19:30:00-03:00",
+    fim: "2026-11-22T18:00:00-03:00",
   },
 
   /* -------------------------------------------------------------------
@@ -68,10 +68,10 @@ window.OIKOS = {
      LOCAL DO RETIRO
      ------------------------------------------------------------------- */
   local: {
-    confirmado: false,
-    nome: "",                        // ex.: "Casa de Retiro ..."
+    confirmado: true,                // cartaz oficial
+    nome: "Escola CEEFMTI Pastor Oliveira de Araújo",
     endereco: "",                    // ex.: "Rua ..., nº ..., Bairro"
-    cidade: "",                      // ex.: "Vila Velha/ES"
+    cidade: "Vila Velha/ES",
     mapa: "",                        // link do Google Maps (opcional)
   },
 
@@ -83,12 +83,12 @@ window.OIKOS = {
              "encerradas"  → inscrições encerradas
      ------------------------------------------------------------------- */
   inscricao: {
-    status: "",
-    texto: "",                       // ex.: "Inscrições pelo WhatsApp até 30/11."
+    status: "em-breve",
+    texto: "Fique atento(a) ao nosso Instagram e não perca nada!",
     link: "",                        // link de formulário/sistema de inscrição, se existir
     valor: "",                       // ex.: "R$ 000,00 (inclui hospedagem e alimentação)"
-    publico: "Jovens e adolescentes",// público descrito no documento oficial
-    criterios: "",                   // ex.: "A partir de 14 anos. Menores com autorização dos responsáveis."
+    publico: "Jovens de 15 a 20 anos",  // cartaz oficial
+    criterios: "",                   // ex.: "Menores de 18 anos precisam de autorização dos responsáveis."
     // Lista do que o participante precisa saber antes de se inscrever:
     antesDeInscrever: [
       // "Levar roupa de cama e itens de higiene.",
@@ -147,8 +147,8 @@ window.OIKOS = {
      ------------------------------------------------------------------- */
   fases: {
     antes: {
-      frase: "Uma *casa* para quem crê no que não vê.",   // a palavra entre asteriscos ganha o círculo da identidade
-      subtitulo: "O retiro anual do Hebreus Onze. Um fim de semana de pregação, artes, oração e convivência para jovens e adolescentes viverem a fé em comunidade.",
+      frase: "Inscrições abertas *em breve!*",   // o trecho entre asteriscos ganha o destaque verde do cartaz
+      subtitulo: "O retiro anual do Hebreus Onze: um fim de semana de pregação, artes, oração e convivência. Fique atento(a) ao nosso Instagram e não perca nada!",
       botao: "Quero viver essa experiência",
       acao: "whatsapp",              // "whatsapp" | "instagram" | "#galeria"
     },
@@ -228,10 +228,17 @@ window.OIKOS = {
     },
     {
       data: "",
-      titulo: "Primeira edição do OIKOS",
-      texto: "Informar o ano e um resumo da primeira edição do retiro.",
+      titulo: "I e II edições do OIKOS",
+      texto: "Informar os anos e um resumo das duas primeiras edições do retiro.",
       foto: { src: "", alt: "" },
       confirmado: false,
+    },
+    {
+      data: "20.11.2026",
+      titulo: "III edição do OIKOS",
+      texto: "De 20 a 22 de novembro de 2026, na Escola CEEFMTI Pastor Oliveira de Araújo, em Vila Velha/ES.",
+      foto: { src: "", alt: "" },
+      confirmado: true,
     },
     {
       data: "",

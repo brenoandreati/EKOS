@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>OIKOS | Retiro anual do Hebreus Onze · Vila Velha/ES</title>
-  <meta name="description" content="OIKOS é o retiro anual do Grupo Jovem Hebreus Onze, da Paróquia Nossa Senhora Aparecida, em Cobilândia, Vila Velha/ES. Pregação, artes, oração e convivência para jovens e adolescentes.">
-  <meta name="theme-color" content="#1A1212">
+  <meta name="description" content="OIKOS é o retiro anual do Grupo Jovem Hebreus Onze, da Paróquia Nossa Senhora Aparecida, em Cobilândia, Vila Velha/ES. Pregação, artes, oração e convivência para jovens de 15 a 20 anos.">
+  <meta name="theme-color" content="#0074AA">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self'; img-src 'self' data: https:; media-src 'self' https:; font-src 'self'; frame-src https://www.instagram.com; connect-src 'self' https://formspree.io https://formsubmit.co https://api.web3forms.com; form-action 'self' https://formspree.io https://formsubmit.co https://api.web3forms.com; base-uri 'self'; object-src 'none'">
 
@@ -15,7 +15,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Hebreus Onze">
   <meta property="og:title" content="OIKOS · Retiro anual do Hebreus Onze">
-  <meta property="og:description" content="Uma casa para quem crê no que não vê. Pregação, artes, oração e convivência para jovens e adolescentes.">
+  <meta property="og:description" content="OIKOS: onde Ele habita. E o que estava perdido, volta para casa. III edição, 20 a 22 de novembro de 2026, em Vila Velha/ES.">
   <meta property="og:image" content="assets/img/social/oikos-compartilhamento.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
 
   <link rel="icon" href="assets/img/marca/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/anybody-var-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/nunito-sans-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/estilo.css">
   <script>document.documentElement.classList.add("js")</script>
@@ -90,7 +90,7 @@
       </ul>
     </nav>
     <div class="topo__acoes">
-      <a class="btn btn--primario btn--pequeno topo__cta" href="#participar">Quero participar</a>
+      <a class="btn btn--primario btn--pequeno topo__cta" href="#participar">Participar</a>
       <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-movel" data-menu-botao>
         <span class="menu-botao__linhas" aria-hidden="true"></span>
         <span class="sr-only">Abrir menu</span>
@@ -123,26 +123,27 @@
 
 <!-- ============================== 1 · HERO ============================== -->
 <section class="hero grao" id="inicio" aria-labelledby="hero-titulo">
-  <div class="hero__midia" data-hero-midia>
-    <div class="hero__luz" aria-hidden="true"></div>
-  </div>
+  <div class="hero__midia" data-hero-midia></div>
   <div class="hero__sombra" aria-hidden="true"></div>
+  <div class="hero__tres-grande" aria-hidden="true">
+    <img class="hero__anel" src="assets/img/oikos/circulo.png" width="1017" height="608" alt="">
+    <img class="hero__tres-img" src="assets/img/oikos/tres-brilho.webp" width="1016" height="731" alt="">
+  </div>
   <div class="hero__casa" aria-hidden="true">
     <img src="assets/img/oikos/casa.webp" width="1080" height="459" alt="">
   </div>
 
-  <div class="wrap hero__grade">
-    <div class="hero__topo">
-      <p class="hero__assina">
-        <img src="assets/img/marca/hebreusonze-marvel.webp" width="1002" height="280" alt="Hebreus Onze">
-        <span>apresenta</span>
-      </p>
-      <p class="hero__verbete">
-        <span class="hero__verbete-termo" lang="el">οἶκος</span>
-        <span>do grego: casa, família, os que vivem sob o mesmo teto.</span>
-      </p>
-    </div>
+  <div class="fita">
+    <svg class="fita__curva" viewBox="0 0 1440 180" aria-hidden="true" focusable="false">
+      <path id="fita-caminho" class="fita__faixa" d="M -40 30 Q 720 230 1480 30"/>
+      <path class="fita__furos" d="M -40 4 Q 720 204 1480 4"/>
+      <path class="fita__furos" d="M -40 56 Q 720 256 1480 56"/>
+      <text dy="9"><textPath href="#fita-caminho" startOffset="50%" text-anchor="middle" textLength="1360" lengthAdjust="spacing" data-lema-svg>OIKOS: ONDE ELE HABITA. E O QUE ESTAVA PERDIDO, VOLTA PARA CASA.</textPath></text>
+    </svg>
+    <p class="fita__texto" data-lema>OIKOS: onde Ele habita. E o que estava perdido, volta para casa.</p>
+  </div>
 
+  <div class="wrap hero__grade">
     <div class="hero__centro">
       <h1 class="hero__bilhete" id="hero-titulo">
         <img src="assets/img/oikos/bilhete-oikos.webp" width="1051" height="562" fetchpriority="high"
@@ -153,21 +154,15 @@
       <div class="hero__texto">
         <p class="hero__edicao">
           <svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>
-          <span><span data-numero-edicao>III Edição</span> · Retiro anual do Hebreus Onze</span>
+          <span><span data-numero-edicao>III Edição</span> · Retiro do Hebreus Onze</span>
         </p>
-        <p class="hero__frase" data-fase-frase>Uma <em>casa</em> para quem crê no que não vê.</p>
-        <p class="hero__sub" data-fase-subtitulo>O retiro anual do Hebreus Onze. Um fim de semana de pregação, artes, oração e convivência para jovens e adolescentes viverem a fé em comunidade.</p>
-        <dl class="hero__dados">
-          <div><dt>Quando</dt><dd data-campo="quando">A divulgar</dd></div>
-          <div><dt>Início</dt><dd data-campo="inicio">Sexta-feira, 19h30</dd></div>
-          <div><dt>Término</dt><dd data-campo="termino">Domingo, 18h</dd></div>
-        </dl>
-        <div class="contador" data-contador hidden>
-          <span class="contador__rotulo">Faltam</span>
-          <span class="contador__item"><b data-contador-dias>0</b> dias</span>
-          <span class="contador__item"><b data-contador-horas>0</b> h</span>
-          <span class="contador__item"><b data-contador-min>0</b> min</span>
-        </div>
+        <p class="hero__frase" data-fase-frase>Inscrições abertas <em>em breve!</em></p>
+        <p class="hero__sub" data-fase-subtitulo>O retiro anual do Hebreus Onze: um fim de semana de pregação, artes, oração e convivência. Fique atento(a) ao nosso Instagram e não perca nada!</p>
+        <ul class="hero__dados">
+          <li data-campo="quando">20, 21 e 22 de novembro de 2026</li>
+          <li data-hero-local>Local: <span data-campo="local-nome">Escola CEEFMTI Pastor Oliveira de Araújo</span></li>
+          <li data-hero-publico>Poderão participar <em data-campo="publico">jovens de 15 a 20 anos!</em></li>
+        </ul>
         <div class="hero__botoes">
           <a class="btn btn--primario" href="#participar" data-fase-botao>
             <span data-fase-botao-texto>Quero viver essa experiência</span>
@@ -230,7 +225,7 @@
 </section>
 
 <!-- ============================== 3 · EXPERIÊNCIA ============================== -->
-<section class="faixa faixa--noite grao experiencia" id="experiencia" aria-labelledby="exp-titulo">
+<section class="faixa faixa--azul grao experiencia" id="experiencia" aria-labelledby="exp-titulo">
   <div class="wrap">
     <header class="cabeca-sec cabeca-sec--dividida revela">
       <div>
@@ -331,7 +326,7 @@
 </div>
 
 <!-- ============================== 5 · HEBREUS ONZE ============================== -->
-<section class="faixa faixa--grafite grao h11" id="hebreus-onze" aria-labelledby="h11-titulo">
+<section class="faixa faixa--noite grao h11" id="hebreus-onze" aria-labelledby="h11-titulo">
   <div class="wrap">
     <div class="h11__abertura">
       <figure class="h11__foto revela">
@@ -426,14 +421,25 @@
 </section>
 
 <!-- ============================== 7 · INFORMAÇÕES ============================== -->
-<section class="faixa faixa--noite grao informacoes" id="informacoes" aria-labelledby="info-titulo">
+<section class="faixa faixa--azul grao informacoes" id="informacoes" aria-labelledby="info-titulo">
   <div class="wrap">
+    <div class="contagem revela" data-contagem hidden>
+      <p class="contagem__palavra" aria-hidden="true" data-contagem-faltam>Faltam</p>
+      <div class="contagem__bilhete" aria-hidden="true">
+        <img src="assets/img/oikos/bilhete-vazio.webp" width="1051" height="562" alt="">
+        <span class="contagem__numero" data-contador-dias></span>
+      </div>
+      <p class="contagem__palavra" aria-hidden="true" data-contagem-dias>dias</p>
+      <p class="sr-only" data-contagem-texto></p>
+    </div>
+
     <header class="cabeca-sec revela">
       <p class="sobrelinha"><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Informações do retiro</p>
       <h2 class="titulo titulo--g" id="info-titulo">Tudo o que você precisa saber.</h2>
     </header>
 
     <article class="ingresso ingresso--info revela" aria-labelledby="info-nome">
+      <div class="ingresso__mascara">
       <div class="ingresso__corpo">
         <div class="ingresso__cabeca">
           <span class="ingresso__barras" aria-hidden="true"></span>
@@ -444,13 +450,14 @@
         <dl class="info-campos" data-info-campos>
           <div class="info-campo"><dt>Início</dt><dd>Sexta-feira, 19h30</dd></div>
           <div class="info-campo"><dt>Encerramento</dt><dd>Domingo, 18h</dd></div>
-          <div class="info-campo"><dt>Público</dt><dd>Jovens e adolescentes</dd></div>
+          <div class="info-campo"><dt>Público</dt><dd>Jovens de 15 a 20 anos</dd></div>
         </dl>
       </div>
       <div class="ingresso__canhoto">
         <span class="ingresso__edicao" data-numero-edicao>III Edição</span>
         <span class="ingresso__admite">Admite um encontrista</span>
         <span class="ingresso__ref">Hb 11,1</span>
+      </div>
       </div>
     </article>
 
