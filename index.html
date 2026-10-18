@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>OIKOS | Retiro anual do Hebreus Onze · Vila Velha/ES</title>
+  <meta name="description" content="OIKOS é o retiro anual do Grupo Jovem Hebreus Onze, da Paróquia Nossa Senhora Aparecida, em Cobilândia, Vila Velha/ES. Pregação, artes, oração e convivência para jovens e adolescentes.">
+  <meta name="theme-color" content="#1A1212">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self'; img-src 'self' data: https:; media-src 'self' https:; font-src 'self'; frame-src https://www.instagram.com; connect-src 'self' https://formspree.io https://formsubmit.co https://api.web3forms.com; form-action 'self' https://formspree.io https://formsubmit.co https://api.web3forms.com; base-uri 'self'; object-src 'none'">
+
+  <!-- Compartilhamento em redes sociais.
+       PENDENTE: quando o site tiver domínio, troque os caminhos de og:image e og:url por endereços completos (https://...). -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Hebreus Onze">
+  <meta property="og:title" content="OIKOS · Retiro anual do Hebreus Onze">
+  <meta property="og:description" content="Uma casa para quem crê no que não vê. Pregação, artes, oração e convivência para jovens e adolescentes.">
+  <meta property="og:image" content="assets/img/social/oikos-compartilhamento.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OIKOS, retiro anual do Hebreus Onze">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/marca/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito-sans-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilo.css">
+  <script>document.documentElement.classList.add("js")</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Grupo Jovem Hebreus Onze",
+    "description": "Grupo jovem católico da Paróquia Nossa Senhora Aparecida, em Cobilândia, Vila Velha/ES.",
+    "foundingDate": "2023-05-28",
+    "email": "hebreusonze0@gmail.com",
+    "sameAs": ["https://www.instagram.com/hebreusonze/"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Vila Velha", "addressRegion": "ES", "addressCountry": "BR" }
+  }
+  </script>
+</head>
+<body>
+
+<!-- Ícones reutilizáveis -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-brilho" viewBox="45 45 651 651"><path fill="currentColor" d="M369 57C363 128 326 206 270 263 209 326 129 364 51 369c-6 1-2 2 12 3 112 11 223 92 275 201 17 37 31 86 31 115 0 8 2 3 3-11 5-55 30-116 66-164 57-76 141-127 230-140 7-1 16-2 18-2s5 0 6-1 0-1-4-1c-2 0-10-1-17-2-99-13-193-75-250-165-27-43-47-100-50-144 0-5-1-9-1-10s-1 4-1 9Z"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-seta-baixo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" d="M12 4v15M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.8a9.2 9.2 0 0 0-7.9 13.9L2.8 21.2l4.6-1.2A9.2 9.2 0 1 0 12 2.8Z"/><path fill="currentColor" d="M9.1 7.3c.3 0 .5 0 .7.5l.9 2.1c.1.3 0 .5-.1.7l-.6.7c-.1.2-.2.3 0 .6.5.9 1.3 1.8 2.3 2.4.3.2.4.1.6 0l.7-.8c.2-.2.4-.2.6-.1l2 1c.3.1.4.3.4.5 0 .8-.6 1.8-1.6 2-1 .2-2.6-.2-4.4-1.6-1.7-1.3-2.9-3.1-3.2-4.3-.3-1.3.3-2.6 1.2-3.3.2-.2.3-.4.5-.4Z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-email" viewBox="0 0 24 24"><rect x="2.8" y="5" width="18.4" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="m3.5 6 8.5 7 8.5-7"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l12.5-7.5Z"/></symbol>
+  <symbol id="i-pausa" viewBox="0 0 24 24"><path fill="currentColor" d="M6 4.5h4v15H6zm8 0h4v15h-4z"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="m5 5 14 14M19 5 5 19"/></symbol>
+  <symbol id="i-anterior" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="m15 4-8 8 8 8"/></symbol>
+  <symbol id="i-proximo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="m9 4 8 8-8 8"/></symbol>
+  <symbol id="i-copiar" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-6.5-6.1-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.3" fill="currentColor"/></symbol>
+</svg>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ============================== CABEÇALHO ============================== -->
+<header class="topo" data-topo>
+  <div class="aviso" data-aviso hidden>
+    <div class="wrap aviso__wrap">
+      <svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>
+      <p class="aviso__texto" data-aviso-texto></p>
+      <a class="aviso__link" data-aviso-link hidden></a>
+    </div>
+  </div>
+  <div class="wrap topo__barra">
+    <a class="marca" href="#inicio" aria-label="OIKOS, Hebreus Onze: voltar ao início">
+      <img class="marca__h11" src="assets/img/marca/hebreusonze-marvel.webp" width="1002" height="280" alt="">
+      <span class="marca__div" aria-hidden="true"></span>
+      <span class="marca__oikos" aria-hidden="true">OIKOS</span>
+    </a>
+    <nav class="nav" aria-label="Seções do site">
+      <ul class="nav__lista">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#oikos">O OIKOS</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#hebreus-onze">Hebreus Onze</a></li>
+        <li><a href="#informacoes">Informações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="topo__acoes">
+      <a class="btn btn--primario btn--pequeno topo__cta" href="#participar">Quero participar</a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-movel" data-menu-botao>
+        <span class="menu-botao__linhas" aria-hidden="true"></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu-movel grao" id="menu-movel" data-menu hidden>
+  <nav aria-label="Menu">
+    <ul class="menu-movel__lista">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#oikos">O OIKOS</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#hebreus-onze">Hebreus Onze</a></li>
+      <li><a href="#informacoes">Informações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+  <div class="menu-movel__rodape">
+    <a class="btn btn--primario" href="#participar">Quero participar</a>
+    <a class="menu-movel__social" data-instagram href="https://www.instagram.com/hebreusonze/" target="_blank" rel="noopener noreferrer">
+      <svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg><span data-instagram-usuario>@hebreusonze</span>
+    </a>
+  </div>
+</div>
+
+<main id="conteudo">
+
+<!-- ============================== 1 · HERO ============================== -->
+<section class="hero grao" id="inicio" aria-labelledby="hero-titulo">
+  <div class="hero__midia" data-hero-midia>
+    <div class="hero__luz" aria-hidden="true"></div>
+  </div>
+  <div class="hero__sombra" aria-hidden="true"></div>
+  <div class="hero__casa" aria-hidden="true">
+    <img src="assets/img/oikos/casa.webp" width="1080" height="459" alt="">
+  </div>
+
+  <div class="wrap hero__grade">
+    <div class="hero__topo">
+      <p class="hero__assina">
+        <img src="assets/img/marca/hebreusonze-marvel.webp" width="1002" height="280" alt="Hebreus Onze">
+        <span>apresenta</span>
+      </p>
+      <p class="hero__verbete">
+        <span class="hero__verbete-termo" lang="el">οἶκος</span>
+        <span>do grego: casa, família, os que vivem sob o mesmo teto.</span>
+      </p>
+    </div>
+
+    <div class="hero__centro">
+      <h1 class="hero__bilhete" id="hero-titulo">
+        <img src="assets/img/oikos/bilhete-oikos.webp" width="1051" height="562" fetchpriority="high"
+             alt="OIKOS, III edição. O melhor final de semana das nossas vidas! Hebreus Onze.">
+        <img class="hero__tres" src="assets/img/oikos/tres-brilho.webp" width="1016" height="731" alt="">
+      </h1>
+
+      <div class="hero__texto">
+        <p class="hero__edicao">
+          <svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>
+          <span><span data-numero-edicao>III Edição</span> · Retiro anual do Hebreus Onze</span>
+        </p>
+        <p class="hero__frase" data-fase-frase>Uma <em>casa</em> para quem crê no que não vê.</p>
+        <p class="hero__sub" data-fase-subtitulo>O retiro anual do Hebreus Onze. Um fim de semana de pregação, artes, oração e convivência para jovens e adolescentes viverem a fé em comunidade.</p>
+        <dl class="hero__dados">
+          <div><dt>Quando</dt><dd data-campo="quando">A divulgar</dd></div>
+          <div><dt>Início</dt><dd data-campo="inicio">Sexta-feira, 19h30</dd></div>
+          <div><dt>Término</dt><dd data-campo="termino">Domingo, 18h</dd></div>
+        </dl>
+        <div class="contador" data-contador hidden>
+          <span class="contador__rotulo">Faltam</span>
+          <span class="contador__item"><b data-contador-dias>0</b> dias</span>
+          <span class="contador__item"><b data-contador-horas>0</b> h</span>
+          <span class="contador__item"><b data-contador-min>0</b> min</span>
+        </div>
+        <div class="hero__botoes">
+          <a class="btn btn--primario" href="#participar" data-fase-botao>
+            <span data-fase-botao-texto>Quero viver essa experiência</span>
+            <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg>
+          </a>
+          <a class="btn btn--contorno" href="#oikos">Conheça o OIKOS</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="hero__pausa" type="button" data-hero-pausa hidden aria-pressed="false">
+    <svg class="icone" aria-hidden="true"><use href="#i-pausa"/></svg>
+    <span class="sr-only" data-hero-pausa-texto>Pausar vídeo de fundo</span>
+  </button>
+</section>
+
+<!-- ============================== 2 · O QUE É O OIKOS ============================== -->
+<section class="faixa faixa--papel oikos-sec" id="oikos" aria-labelledby="oikos-titulo">
+  <div class="wrap oikos-sec__grade">
+    <div class="oikos-sec__texto revela">
+      <p class="sobrelinha"><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>O que é o OIKOS</p>
+      <h2 class="titulo titulo--g" id="oikos-titulo">Três dias para viver a fé de perto.</h2>
+      <div class="prosa">
+        <p>O OIKOS é o retiro anual do Hebreus Onze. Ele nasceu de uma moção: oferecer uma experiência nova para os jovens e adolescentes de Vila Velha, com foco no crescimento humano e espiritual.</p>
+        <p>De sexta à noite até domingo, pregações, dinâmicas, artes e oração se encontram. Encontristas e servos vivem juntos cada momento do fim de semana.</p>
+        <p>Em grego, <em>oikos</em> quer dizer casa. É esse o espírito do retiro: um lugar de acolhida, onde a fé é vivida em comunidade.</p>
+      </div>
+    </div>
+
+    <figure class="oikos-sec__foto revela">
+      <div class="moldura moldura--retrato" data-midia="oikos" data-midia-rotulo="Foto do OIKOS (edição anterior)">
+        <div class="moldura__vazia" aria-hidden="true"><span>OIKOS</span></div>
+      </div>
+      <figcaption class="legenda" data-midia-legenda="oikos" hidden></figcaption>
+    </figure>
+
+    <blockquote class="citacao-oikos revela">
+      <svg class="citacao-oikos__brilho" aria-hidden="true"><use href="#i-brilho"/></svg>
+      <p>Cada experiência é vivida, e não apenas participada.</p>
+      <footer>Pilares do OIKOS</footer>
+    </blockquote>
+  </div>
+
+  <div class="wrap">
+    <dl class="fatos revela">
+      <div class="fato">
+        <dt class="fato__valor">Sexta <span aria-hidden="true">→</span><span class="sr-only">a</span> Domingo</dt>
+        <dd class="fato__desc" data-campo="fato-horario">Da sexta, às 19h30, ao domingo, às 18h.</dd>
+      </div>
+      <div class="fato">
+        <dt class="fato__valor">4 pilares</dt>
+        <dd class="fato__desc">Pregações, dinâmicas, artes e experiência audiovisual.</dd>
+      </div>
+      <div class="fato" data-fato-pessoas>
+        <dt class="fato__valor" data-campo="pessoas">220</dt>
+        <dd class="fato__desc">pessoas envolvidas entre encontristas e servos.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================== 3 · EXPERIÊNCIA ============================== -->
+<section class="faixa faixa--noite grao experiencia" id="experiencia" aria-labelledby="exp-titulo">
+  <div class="wrap">
+    <header class="cabeca-sec cabeca-sec--dividida revela">
+      <div>
+        <p class="sobrelinha"><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Uma experiência em diferentes dimensões</p>
+        <h2 class="titulo titulo--g" id="exp-titulo">Quatro pilares. Uma só experiência.</h2>
+      </div>
+      <p class="cabeca-sec__intro">O retiro é construído sobre experiências que não são descartáveis. Cada uma tem um papel no fim de semana, e todas apontam para o mesmo encontro.</p>
+    </header>
+
+    <div class="pilares">
+      <article class="pilar pilar--a revela">
+        <div class="moldura moldura--paisagem" data-midia="pregacao" data-midia-rotulo="Foto ou vídeo das pregações">
+          <div class="moldura__vazia" aria-hidden="true"><span>Palavra</span></div>
+        </div>
+        <div class="pilar__picote" aria-hidden="true"></div>
+        <div class="pilar__corpo">
+          <p class="pilar__tag">Palavra</p>
+          <h3 class="pilar__titulo">Pregações e dimensões</h3>
+          <p>Pregações que atravessam as diferentes dimensões da vida cristã, buscando o crescimento integral de cada participante.</p>
+        </div>
+      </article>
+
+      <article class="pilar pilar--b revela">
+        <div class="moldura moldura--retrato" data-midia="dinamicas" data-midia-rotulo="Foto ou vídeo das dinâmicas de grupo">
+          <div class="moldura__vazia" aria-hidden="true"><span>Juntos</span></div>
+        </div>
+        <div class="pilar__picote" aria-hidden="true"></div>
+        <div class="pilar__corpo">
+          <p class="pilar__tag">Comunidade</p>
+          <h3 class="pilar__titulo">Dinâmicas de grupo</h3>
+          <p>Atividades de interação que aproximam quem chega, constroem vínculos e fazem nascer o sentido de comunidade e pertencimento.</p>
+        </div>
+      </article>
+
+      <article class="pilar pilar--c revela">
+        <div class="moldura moldura--retrato" data-midia="artes" data-midia-rotulo="Foto ou vídeo das artes (monólogos e interlúdios)">
+          <div class="moldura__vazia" aria-hidden="true"><span>Arte</span></div>
+        </div>
+        <div class="pilar__picote" aria-hidden="true"></div>
+        <div class="pilar__corpo">
+          <p class="pilar__tag">Arte</p>
+          <h3 class="pilar__titulo">Artes</h3>
+          <p>Monólogos e interlúdios apresentados antes das pregações, criados para tocar os corações e preparar o ambiente para a mensagem.</p>
+        </div>
+      </article>
+
+      <article class="pilar pilar--d revela">
+        <div class="moldura moldura--paisagem" data-midia="audiovisual" data-midia-rotulo="Foto ou vídeo da equipe audiovisual">
+          <div class="moldura__vazia" aria-hidden="true"><span>Registro</span></div>
+        </div>
+        <div class="pilar__picote" aria-hidden="true"></div>
+        <div class="pilar__corpo">
+          <p class="pilar__tag">Registro</p>
+          <h3 class="pilar__titulo">Experiência audiovisual</h3>
+          <p>Fotos e vídeos acompanham o retiro em tempo real e levam um pouco do espírito do OIKOS a quem não pôde estar presente.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 4 · GALERIA ============================== -->
+<section class="faixa faixa--papel galeria" id="galeria" aria-labelledby="galeria-titulo">
+  <div class="wrap">
+    <header class="cabeca-sec revela">
+      <p class="sobrelinha"><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Viva o OIKOS através das imagens</p>
+      <h2 class="titulo titulo--gg" id="galeria-titulo">Por dentro do OIKOS</h2>
+      <p class="cabeca-sec__intro">Oração, louvor, artes, bastidores e convivência. Registros do retiro feitos pela equipe de mídias do Hebreus Onze.</p>
+    </header>
+
+    <div class="galeria__filtros" data-galeria-filtros role="group" aria-label="Filtrar galeria" hidden></div>
+    <div class="galeria__grade" data-galeria-grade aria-live="polite"></div>
+
+    <div class="galeria__vazia" data-galeria-vazia hidden>
+      <p>As imagens das edições do OIKOS chegam aqui em breve. Enquanto isso, acompanhe os registros no nosso Instagram.</p>
+      <a class="btn btn--escuro" data-instagram href="https://www.instagram.com/hebreusonze/" target="_blank" rel="noopener noreferrer">
+        <svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg>Ver no Instagram
+      </a>
+    </div>
+
+    <p class="galeria__mais">
+      <a data-instagram href="https://www.instagram.com/hebreusonze/" target="_blank" rel="noopener noreferrer">
+        Mais registros em <span data-instagram-usuario>@hebreusonze</span>
+        <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- Faixa com a frase do grupo -->
+<div class="frase-faixa">
+  <p class="sr-only">Jovens, se fores aquilo que Deus quer, colocareis fogo no mundo!</p>
+  <div class="frase-faixa__trilho" aria-hidden="true">
+    <span>Jovens, se fores aquilo que Deus quer, colocareis fogo no mundo!</span><svg><use href="#i-brilho"/></svg>
+    <span>Jovens, se fores aquilo que Deus quer, colocareis fogo no mundo!</span><svg><use href="#i-brilho"/></svg>
+    <span>Jovens, se fores aquilo que Deus quer, colocareis fogo no mundo!</span><svg><use href="#i-brilho"/></svg>
+  </div>
+</div>
+
+<!-- ============================== 5 · HEBREUS ONZE ============================== -->
+<section class="faixa faixa--grafite grao h11" id="hebreus-onze" aria-labelledby="h11-titulo">
+  <div class="wrap">
+    <div class="h11__abertura">
+      <figure class="h11__foto revela">
+        <div class="moldura moldura--retrato" data-midia="grupo" data-midia-rotulo="Foto real do grupo Hebreus Onze">
+          <div class="moldura__vazia moldura__vazia--logo" aria-hidden="true">
+            <img src="assets/img/marca/hebreus-onze-creme.svg" width="302" height="100" alt="">
+          </div>
+        </div>
+        <figcaption class="legenda" data-midia-legenda="grupo" hidden></figcaption>
+      </figure>
+
+      <div class="h11__intro revela">
+        <p class="sobrelinha"><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Quem prepara o OIKOS</p>
+        <h2 class="titulo titulo--g" id="h11-titulo">Somos o Hebreus Onze.</h2>
+        <p class="h11__onde">Grupo jovem da Paróquia Nossa Senhora Aparecida, em Cobilândia, Vila Velha/ES.</p>
+        <div class="prosa">
+          <p>Nascemos em 28 de maio de 2023, no encontro START. O grupo surgiu no coração do nosso fundador, Yuri Afonso, e caminha sob a orientação pastoral do pároco, Pe. Gudialace de Oliveira, para evangelizar e fortalecer a fé e a vivência cristã entre os jovens.</p>
+          <p>Somos um grupo católico que acredita em uma juventude avivada, com a fé como base de tudo e a alegria do Senhor no peito. Acreditamos em um avivamento que transforma de verdade e gera mudança de vida.</p>
+        </div>
+        <a class="btn btn--primario" data-instagram href="https://www.instagram.com/hebreusonze/" target="_blank" rel="noopener noreferrer">
+          <svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg>
+          Conheça nossa caminhada
+        </a>
+      </div>
+    </div>
+
+    <figure class="versiculo revela">
+      <blockquote>
+        <p>A fé é o fundamento da esperança, é uma certeza a respeito do que não se vê.</p>
+      </blockquote>
+      <figcaption><span class="versiculo__ref">Hb 11,1</span><span>Nosso nome vem daqui.</span></figcaption>
+    </figure>
+
+    <div class="pilares-fe revela">
+      <h3 class="sobrelinha">Nossos pilares</h3>
+      <ul class="pilares-fe__lista">
+        <li><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Amor à Eucaristia</li>
+        <li><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Devoção à Virgem Santíssima</li>
+        <li><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Fidelidade à Igreja Católica</li>
+      </ul>
+      <p class="pilares-fe__nota">Tudo sob a ação do Espírito Santo, na busca de uma conversão genuína e de uma profunda experiência com o Paráclito.</p>
+    </div>
+
+    <div class="h11__missao">
+      <div class="h11__como revela">
+        <h3 class="titulo titulo--m">Como evangelizamos</h3>
+        <div class="prosa">
+          <p>De forma criativa, acolhedora e moderna. Na música, na dança e no teatro, na oração, nas redes sociais e na convivência, testemunhando com a própria vida a alegria de ser jovem e católico.</p>
+          <p>Seis ministérios servem juntos para que a missão aconteça: Artes &amp; Dança, Infraestrutura, Mídias, Música, Pregação e Intercessão, e Tios.</p>
+        </div>
+      </div>
+      <div class="h11__encontros revela">
+        <h3 class="titulo titulo--m">Nossos encontros</h3>
+        <dl class="encontros">
+          <div><dt>Holy Fire</dt><dd>Oração profunda, com foco no avivamento espiritual.</dd></div>
+          <div><dt>Pequena Via</dt><dd>Formação em doutrina, espiritualidade e valores da fé.</dd></div>
+          <div><dt>H11 no Cinema</dt><dd>Temas atuais refletidos a partir de filmes e documentários.</dd></div>
+          <div><dt>Luau do H11</dt><dd>Convivência fraterna e oração ao ar livre.</dd></div>
+          <div><dt>H11 nas Comunidades</dt><dd>Oração e adoração nas comunidades da paróquia.</dd></div>
+          <div><dt>H11 em Casa</dt><dd>Espiritualidade, oração e partilha na casa das pessoas.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 6 · NOSSA CAMINHADA ============================== -->
+<section class="faixa faixa--papel caminhada" id="caminhada" aria-labelledby="caminhada-titulo">
+  <div class="wrap caminhada__grade">
+    <header class="caminhada__cabeca revela">
+      <p class="sobrelinha"><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Um pouco da nossa caminhada</p>
+      <h2 class="titulo titulo--g" id="caminhada-titulo">Caminhando desde 2023.</h2>
+      <p class="cabeca-sec__intro">Cada encontro, missão e edição do OIKOS faz parte da mesma história de fé.</p>
+    </header>
+    <ol class="linha-tempo" data-caminhada>
+      <li class="marco revela">
+        <p class="marco__data">28.05.2023</p>
+        <div class="marco__corpo">
+          <h3 class="marco__titulo">Nasce o Hebreus Onze</h3>
+          <p>O encontro START marca o início da caminhada do grupo na Paróquia Nossa Senhora Aparecida, em Cobilândia, Vila Velha/ES.</p>
+        </div>
+      </li>
+    </ol>
+    <div class="caminhada__fim revela">
+      <p>A caminhada continua no dia a dia do grupo.</p>
+      <a data-instagram href="https://www.instagram.com/hebreusonze/" target="_blank" rel="noopener noreferrer">
+        Acompanhe em <span data-instagram-usuario>@hebreusonze</span>
+        <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 7 · INFORMAÇÕES ============================== -->
+<section class="faixa faixa--noite grao informacoes" id="informacoes" aria-labelledby="info-titulo">
+  <div class="wrap">
+    <header class="cabeca-sec revela">
+      <p class="sobrelinha"><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Informações do retiro</p>
+      <h2 class="titulo titulo--g" id="info-titulo">Tudo o que você precisa saber.</h2>
+    </header>
+
+    <article class="ingresso ingresso--info revela" aria-labelledby="info-nome">
+      <div class="ingresso__corpo">
+        <div class="ingresso__cabeca">
+          <span class="ingresso__barras" aria-hidden="true"></span>
+          <span class="ingresso__serie">Ticket · 280523</span>
+        </div>
+        <h3 class="ingresso__nome" id="info-nome">OIKOS <span data-ano-edicao></span></h3>
+        <p class="ingresso__desc">Retiro anual do Hebreus Onze</p>
+        <dl class="info-campos" data-info-campos>
+          <div class="info-campo"><dt>Início</dt><dd>Sexta-feira, 19h30</dd></div>
+          <div class="info-campo"><dt>Encerramento</dt><dd>Domingo, 18h</dd></div>
+          <div class="info-campo"><dt>Público</dt><dd>Jovens e adolescentes</dd></div>
+        </dl>
+      </div>
+      <div class="ingresso__canhoto">
+        <span class="ingresso__edicao" data-numero-edicao>III Edição</span>
+        <span class="ingresso__admite">Admite um encontrista</span>
+        <span class="ingresso__ref">Hb 11,1</span>
+      </div>
+    </article>
+
+    <div class="info-extra">
+      <div class="info-extra__lista revela" data-antes hidden>
+        <h3 class="titulo titulo--m">Antes de se inscrever</h3>
+        <ul class="lista-check" data-antes-lista></ul>
+      </div>
+      <div class="info-extra__duvida revela">
+        <h3 class="titulo titulo--m">Ficou com alguma dúvida?</h3>
+        <p>A equipe do OIKOS responde pelo WhatsApp.</p>
+        <a class="link-seta" href="#participar" data-whatsapp data-rotulo-alternativo="Falar com a equipe no Instagram">
+          <span data-whatsapp-rotulo>Falar com a equipe</span>
+          <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 8 · PARTICIPAR ============================== -->
+<section class="faixa faixa--vermelha participar" id="participar" aria-labelledby="participar-titulo">
+  <div class="participar__fundo" aria-hidden="true">OIKOS</div>
+  <div class="wrap participar__grade">
+    <h2 class="titulo titulo--ggg revela" id="participar-titulo">Tem um lugar pra você nessa casa.</h2>
+    <div class="participar__acao revela">
+      <p>Quer participar do OIKOS ou entender melhor como ele funciona? Chama a equipe no WhatsApp. A gente tira suas dúvidas e explica os próximos passos.</p>
+      <a class="btn btn--papel btn--grande" href="#contato" data-whatsapp data-rotulo-alternativo="Falar com a equipe no Instagram">
+        <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        <span data-whatsapp-rotulo>Quero saber como participar</span>
+      </a>
+      <p class="participar__nota" data-whatsapp-nota hidden>Você vai abrir uma conversa com o número <span data-whatsapp-numero></span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 9 · CONTATO ============================== -->
+<section class="faixa faixa--papel contato" id="contato" aria-labelledby="contato-titulo">
+  <div class="wrap contato__grade">
+    <div class="contato__canais revela">
+      <p class="sobrelinha"><svg class="icone" aria-hidden="true"><use href="#i-brilho"/></svg>Contato</p>
+      <h2 class="titulo titulo--g" id="contato-titulo">Fale com o Hebreus Onze.</h2>
+      <ul class="canais">
+        <li data-canal-whatsapp hidden>
+          <a class="canal" href="#participar" data-whatsapp>
+            <svg class="icone canal__icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            <span class="canal__rotulo">WhatsApp</span>
+            <span class="canal__valor" data-whatsapp-numero></span>
+            <svg class="icone canal__seta" aria-hidden="true"><use href="#i-seta"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="canal" data-instagram href="https://www.instagram.com/hebreusonze/" target="_blank" rel="noopener noreferrer">
+            <svg class="icone canal__icone" aria-hidden="true"><use href="#i-instagram"/></svg>
+            <span class="canal__rotulo">Instagram</span>
+            <span class="canal__valor" data-instagram-usuario>@hebreusonze</span>
+            <svg class="icone canal__seta" aria-hidden="true"><use href="#i-seta"/></svg>
+          </a>
+        </li>
+        <li class="canal canal--email">
+          <svg class="icone canal__icone" aria-hidden="true"><use href="#i-email"/></svg>
+          <span class="canal__rotulo">E-mail</span>
+          <a class="canal__valor" data-email href="mailto:hebreusonze0@gmail.com">hebreusonze0@gmail.com</a>
+          <button class="canal__copiar" type="button" data-copiar-email>
+            <svg class="icone" aria-hidden="true"><use href="#i-copiar"/></svg>
+            <span data-copiar-texto>Copiar</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="contato__form revela" data-form-bloco>
+      <h3 class="titulo titulo--m">Mande sua dúvida</h3>
+      <p class="contato__form-intro">Responderemos pelo contato que você informar.</p>
+      <form class="form" data-form novalidate>
+        <div class="campo">
+          <label for="f-nome">Seu nome</label>
+          <input id="f-nome" name="nome" type="text" autocomplete="name" required minlength="2" maxlength="80">
+          <p class="campo__erro" id="f-nome-erro" data-erro-de="f-nome" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="f-contato">WhatsApp ou e-mail para resposta</label>
+          <input id="f-contato" name="contato" type="text" autocomplete="email" required maxlength="120" inputmode="email">
+          <p class="campo__erro" id="f-contato-erro" data-erro-de="f-contato" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="f-mensagem">Mensagem</label>
+          <textarea id="f-mensagem" name="mensagem" rows="4" required minlength="10" maxlength="1500"></textarea>
+          <p class="campo__erro" id="f-mensagem-erro" data-erro-de="f-mensagem" hidden></p>
+        </div>
+        <div class="campo campo--isca" aria-hidden="true">
+          <label for="f-site">Não preencha este campo</label>
+          <input id="f-site" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="campo campo--check">
+          <input id="f-aceite" name="aceite" type="checkbox" required>
+          <label for="f-aceite">Autorizo o Hebreus Onze a usar estes dados só para responder minha mensagem. <a href="privacidade.html">Política de privacidade</a></label>
+          <p class="campo__erro" id="f-aceite-erro" data-erro-de="f-aceite" hidden></p>
+        </div>
+        <button class="btn btn--escuro" type="submit" data-form-enviar>Enviar mensagem</button>
+        <p class="form__status" data-form-status role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== 10 · RODAPÉ ============================== -->
+<footer class="rodape grao">
+  <div class="wrap rodape__grade">
+    <div class="rodape__marca">
+      <img src="assets/img/marca/hebreus-onze-creme.svg" width="151" height="50" alt="Hebreus Onze">
+      <p class="rodape__oikos">OIKOS<span>Retiro anual do Hebreus Onze</span></p>
+    </div>
+    <div class="rodape__col">
+      <h2 class="rodape__titulo">Navegue</h2>
+      <ul>
+        <li><a href="#oikos">O OIKOS</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#informacoes">Informações</a></li>
+      </ul>
+    </div>
+    <div class="rodape__col">
+      <h2 class="rodape__titulo">Contato</h2>
+      <ul>
+        <li><a data-instagram href="https://www.instagram.com/hebreusonze/" target="_blank" rel="noopener noreferrer"><span data-instagram-usuario>@hebreusonze</span></a></li>
+        <li><a data-email href="mailto:hebreusonze0@gmail.com">hebreusonze0@gmail.com</a></li>
+      </ul>
+    </div>
+    <div class="rodape__col">
+      <h2 class="rodape__titulo">Grupo Jovem Hebreus Onze</h2>
+      <p>Paróquia Nossa Senhora Aparecida<br>Cobilândia · Vila Velha/ES</p>
+    </div>
+  </div>
+  <div class="wrap rodape__base">
+    <p>© <span data-ano-atual>2026</span> Grupo Jovem Hebreus Onze. Todos os direitos reservados.</p>
+    <p><a href="privacidade.html">Política de privacidade</a></p>
+  </div>
+</footer>
+
+<!-- Chamada fixa no celular -->
+<div class="cta-movel" data-cta-movel hidden>
+  <a class="btn btn--primario" href="#participar">Quero participar</a>
+</div>
+
+<!-- Visualização ampliada da galeria -->
+<dialog class="lightbox" data-lightbox aria-label="Galeria ampliada">
+  <div class="lightbox__palco" data-lightbox-palco></div>
+  <div class="lightbox__barra">
+    <p class="lightbox__legenda" data-lightbox-legenda></p>
+    <p class="lightbox__contagem" data-lightbox-contagem></p>
+  </div>
+  <button class="lightbox__btn lightbox__fechar" type="button" data-lightbox-fechar>
+    <svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg><span class="sr-only">Fechar</span>
+  </button>
+  <button class="lightbox__btn lightbox__ant" type="button" data-lightbox-anterior>
+    <svg class="icone" aria-hidden="true"><use href="#i-anterior"/></svg><span class="sr-only">Mídia anterior</span>
+  </button>
+  <button class="lightbox__btn lightbox__prox" type="button" data-lightbox-proximo>
+    <svg class="icone" aria-hidden="true"><use href="#i-proximo"/></svg><span class="sr-only">Próxima mídia</span>
+  </button>
+</dialog>
+
+<script src="conteudo.js" defer></script>
+<script src="js/util.js" defer></script>
+<script src="js/galeria.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>
