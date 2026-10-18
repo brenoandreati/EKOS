@@ -54,7 +54,6 @@ Ainda falta:
 - [ ] Anos da I e da II edição do OIKOS (para a linha do tempo).
 - [ ] Confirmar se as 220 pessoas envolvidas (documento oficial) valem para esta edição.
 - [ ] Formulário de dúvidas: conectar a um serviço de envio (abaixo) ou deixá-lo oculto.
-- [ ] Domínio do site: trocar `og:image` no `index.html` por um endereço completo (`https://...`), para a prévia aparecer no WhatsApp.
 - [ ] Mudar `modo` para `"publicacao"`.
 
 ## Formulário de dúvidas
@@ -126,6 +125,24 @@ python3 -m http.server 8000
 # abra http://localhost:8000
 ```
 
-## Publicar no GitHub Pages
+## Publicação (Cloudflare Pages)
 
-Settings → Pages → Branch: escolha a branch principal e a pasta `/ (root)`. O arquivo `.nojekyll` já está incluído.
+O site está publicado no Cloudflare Pages, no projeto **hebreus-onze-oikos**:
+
+- Endereço: <https://hebreus-onze-oikos.pages.dev>
+- Painel: Cloudflare → Workers & Pages → hebreus-onze-oikos
+
+Para publicar uma atualização, envie só os arquivos do site (sem `README.md` e `.git`):
+
+```bash
+mkdir -p dist && cp -r index.html privacidade.html conteudo.js css js assets _headers robots.txt sitemap.xml dist/
+npx wrangler pages deploy dist --project-name hebreus-onze-oikos --branch main
+```
+
+O comando usa o token em `CLOUDFLARE_API_TOKEN` (ou pede login no navegador). Também é possível arrastar a pasta `dist` em Workers & Pages → hebreus-onze-oikos → Create deployment.
+
+O projeto foi criado por envio direto (Direct Upload). Para publicar sozinho a cada alteração no GitHub, é preciso criar no painel um projeto conectado ao repositório (Workers & Pages → Create → Pages → Connect to Git). O Cloudflare não converte um projeto de envio direto em projeto conectado ao Git.
+
+Se o site ganhar um domínio próprio (ex.: `oikos.hebreusonze.com.br`), adicione-o em Custom domains e atualize `og:url`, `og:image` e o link canônico no `index.html`, além de `robots.txt` e `sitemap.xml`.
+
+`_headers` define cabeçalhos de segurança e cache. `robots.txt` e `sitemap.xml` ajudam os buscadores.
