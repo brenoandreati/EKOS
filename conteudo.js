@@ -83,8 +83,8 @@ window.OIKOS = {
              "encerradas"  → inscrições encerradas
      ------------------------------------------------------------------- */
   inscricao: {
-    status: "em-breve",
-    texto: "Fique atento(a) ao nosso Instagram e não perca nada!",
+    status: "encerradas",
+    texto: "As inscrições se encerraram em 90 minutos, um recorde.",
     link: "",                        // link de formulário/sistema de inscrição, se existir
     valor: "",                       // ex.: "R$ 000,00 (inclui hospedagem e alimentação)"
     publico: "Jovens de 15 a 20 anos",  // cartaz oficial
@@ -147,10 +147,11 @@ window.OIKOS = {
      ------------------------------------------------------------------- */
   fases: {
     antes: {
-      frase: "Inscrições abertas *em breve!*",   // o trecho entre asteriscos ganha o destaque verde do cartaz
-      subtitulo: "O retiro anual do Hebreus Onze: um fim de semana de pregação, artes, oração e convivência. Fique atento(a) ao nosso Instagram e não perca nada!",
-      botao: "Quero viver essa experiência",
-      acao: "whatsapp",              // "whatsapp" | "instagram" | "#galeria"
+      selo: "Recorde: 90 minutos",   // selo vermelho acima da frase (deixe "" para esconder)
+      frase: "Inscrições *encerradas!*",   // o trecho entre asteriscos ganha o destaque verde do cartaz
+      subtitulo: "Foi recorde: as inscrições se encerraram em apenas 90 minutos. Obrigado a cada jovem que disse sim! Acompanhe a III edição pelo nosso Instagram.",
+      botao: "Acompanhar no Instagram",
+      acao: "instagram",             // "whatsapp" | "instagram" | "#galeria"
     },
     durante: {
       frase: "O OIKOS está acontecendo agora.",

@@ -418,11 +418,23 @@ button { font: inherit; }
 .hero__edicao .icone { width: 1em; height: 1em; color: var(--papel); }
 .hero__frase {
   max-width: 16ch; margin-top: 1rem;
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 150%; font-weight: 850;
-  font-size: clamp(1.75rem, 1.1rem + 2.1vw, 2.9rem);
+  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 132%; font-weight: 850;
+  font-size: clamp(1.75rem, 1.1rem + 2.1vw, 2.75rem);
   line-height: 1.04; text-transform: uppercase; text-wrap: balance;
 }
 .hero__frase em { white-space: nowrap; }
+/* Selo vermelho (ex.: "Recorde: 90 minutos") */
+.hero__selo {
+  display: inline-block; width: fit-content; margin-top: 1rem;
+  padding: .35rem .9rem .4rem;
+  border: 2px dashed rgb(252 244 212 / .7); border-radius: 3px;
+  background: var(--vermelho); color: var(--papel);
+  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 120%; font-weight: 900;
+  font-size: 1.2rem; line-height: 1.1; text-transform: uppercase; letter-spacing: .02em;
+  transform: rotate(-3deg);
+  box-shadow: 0 8px 18px rgb(10 26 43 / .25);
+}
+.hero__selo + .hero__frase { margin-top: .9rem; }
 .hero__sub { max-width: 40ch; margin-top: 1.1rem; font-size: 1.2rem; font-weight: 700; line-height: 1.45; }
 .hero__dados { display: grid; gap: .45rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
 .hero__dados li {
@@ -1028,3 +1040,6 @@ a.canal:hover .canal__seta { transform: translateX(4px); }
 /* Traços da fita (SVG) */
 .fita__faixa { fill: none; stroke: var(--vermelho); stroke-width: 76; filter: drop-shadow(0 10px 14px rgb(10 26 43 / .2)); }
 .fita__furos { fill: none; stroke: var(--ceu); stroke-width: 9; stroke-dasharray: 11 8; }
+
+/* Telas de 1000 a 1199px: frase do topo um pouco menor para caber na coluna */
+@media (min-width: 1000px) and (max-width: 1199px) { .hero__frase { font-size: 2.1rem; } }

@@ -158,6 +158,11 @@
     var f = ler("fases." + nome) || {};
     var frase = $("[data-fase-frase]"), sub = $("[data-fase-subtitulo]");
     var botao = $("[data-fase-botao]"), botaoTexto = $("[data-fase-botao-texto]");
+    var selo = $("[data-fase-selo]");
+    if (selo) {
+      selo.textContent = vazio(f.selo) ? "" : f.selo;
+      selo.hidden = vazio(f.selo);
+    }
     if (!vazio(f.frase)) O.textoComDestaque(frase, f.frase);
     if (!vazio(f.subtitulo)) sub.textContent = f.subtitulo;
     if (!vazio(f.botao)) botaoTexto.textContent = f.botao;
