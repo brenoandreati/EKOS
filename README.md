@@ -95,13 +95,20 @@ Regras de contraste:
 
 ### Fontes
 
-As fontes do kit não podem ser publicadas na web como estão:
+O site usa as fontes do kit da identidade, convertidas para `.woff2` (só os caracteres latinos) e hospedadas em `assets/fonts/`:
 
-- **Condor** (Font Bureau/Type Network), usada nos títulos do cartaz ("FALTAM DIAS"): "For TN use only"; exige licença web.
-- **Avenir, Avenir Next e Avenir Next Condensed** (Linotype/Monotype): as cópias do kit são do sistema macOS; o uso em site exige licença web.
-- **Marvel-Regular.ttf**: fonte do selo HEBREUSONZE, com só 31 caracteres (sem acentos). Serve para a arte, não para textos.
+| Fonte | Onde aparece | Variável no CSS |
+| --- | --- | --- |
+| **Condor ExtraBold Expanded Italic** | títulos, "FALTAM DIAS", faixa animada, menu | `--fonte-titulo` |
+| **Condor ExtraBold Condensed** | "OIKOS" do ingresso de informações e o "OIKOS" vazado da seção Participar | `--fonte-condensada` |
+| **Avenir Next Condensed** (Demi, Bold e Heavy Italic; Heavy) | dados do topo, botões, selo, valores do ingresso, datas, número da contagem | `--fonte-apoio` |
+| **Avenir Next** (Medium, Demi, Bold e Heavy) | textos corridos e rótulos | `--fonte-texto` |
 
-Por isso o site usa substitutas gratuitas (licença SIL OFL), hospedadas no próprio site: **Anybody** (itálica, 150% de largura) no lugar da Condor Expanded Italic, e **Nunito Sans** no lugar da Avenir Next. Se o grupo adquirir licenças web, coloque os `.woff2` em `assets/fonts/`, declare-os com `@font-face` no topo de `css/estilo.css` e troque `--fonte-titulo` e `--fonte-texto`.
+**A Condor do kit é uma versão de teste:** só tem A–Z, a–z, espaço e ponto, sem acentos, números e pontuação. Esses caracteres vêm da **OIKOS Complemento** (`oikos-complemento-italic.woff2`). Ela é derivada da Anybody (licença SIL OFL) e foi ajustada à altura das maiúsculas, à largura, ao peso e à inclinação da Condor. O navegador só a usa nos caracteres que faltam na Condor. Quando o grupo tiver a Condor completa, basta gerar o novo `condor-extrabold-expanded-italic.woff2` e substituir o arquivo, sem mexer no CSS.
+
+**Licenças:** a Condor (Font Bureau/Type Network, arquivo marcado "For TN use only") e a família Avenir Next (Linotype/Monotype, cópias do macOS) são fontes comerciais. Para usá-las num site público, o grupo precisa de licença web de cada uma. Se preferir não licenciar, a versão anterior do site, com as substitutas gratuitas Anybody e Nunito Sans, continua no histórico do Git.
+
+**Marvel-Regular.ttf** é a fonte do selo HEBREUSONZE e tem só 31 caracteres (A–Z maiúsculas, sem acentos). Ela continua só na arte do selo, que já está em imagem.
 
 Observação sobre a arte: o ingresso do cartaz traz "OLD VILAGE"; em inglês o correto é "VILLAGE".
 

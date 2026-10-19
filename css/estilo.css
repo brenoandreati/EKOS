@@ -12,14 +12,26 @@
    existem para garantir contraste de leitura e estados de interação.
    ===================================================================== */
 
-/* ---------- Fontes (arquivos locais, licença SIL OFL) ----------
-   Anybody substitui a Condor Expanded Italic do cartaz (títulos) e
-   Nunito Sans substitui a Avenir Next (textos). As fontes do kit são
-   comerciais ou incompletas para a web; veja o README. */
-@font-face { font-family: "Anybody"; src: url("../assets/fonts/anybody-var-italic-latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 50% 150%; font-style: italic; font-display: swap; }
-@font-face { font-family: "Anybody"; src: url("../assets/fonts/anybody-var-normal-latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 50% 150%; font-style: normal; font-display: swap; }
-@font-face { font-family: "Nunito Sans"; src: url("../assets/fonts/nunito-sans-400-800-latin.woff2") format("woff2"); font-weight: 400 800; font-style: normal; font-display: swap; }
-@font-face { font-family: "Nunito Sans"; src: url("../assets/fonts/nunito-sans-400-italic-latin.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+/* ---------- Fontes da identidade visual (arquivos locais) ----------
+   Condor ExtraBold Expanded Italic: títulos ("FALTAM DIAS" do cartaz).
+   Condor ExtraBold Condensed: o "OIKOS" do ingresso.
+   Avenir Next: textos. Avenir Next Condensed: chamadas, dados e números.
+   A Condor do kit é uma versão de teste, só com A–Z e a–z. Acentos,
+   números e pontuação dos títulos vêm da "OIKOS Complemento" (derivada da
+   Anybody, SIL OFL), ajustada à altura, largura, peso e inclinação da
+   Condor. Com a Condor completa, basta trocar os arquivos. Veja o README. */
+@font-face { font-family: "Condor Expanded"; src: url("../assets/fonts/condor-extrabold-expanded-italic.woff2") format("woff2"); font-weight: 100 1000; font-style: italic; font-display: swap; }
+@font-face { font-family: "OIKOS Complemento"; src: url("../assets/fonts/oikos-complemento-italic.woff2") format("woff2"); font-weight: 100 1000; font-style: italic; font-display: swap; unicode-range: U+21-2D, U+2F-40, U+5B-60, U+7B-7E, U+A0-FF, U+131, U+152-153, U+2C6, U+2DA, U+2DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+2122, U+2190-2193, U+2212; }
+@font-face { font-family: "Condor Condensed"; src: url("../assets/fonts/condor-extrabold-condensed.woff2") format("woff2"); font-weight: 100 1000; font-style: normal; font-display: swap; }
+@font-face { font-family: "Avenir Next"; src: url("../assets/fonts/avenir-next-500.woff2") format("woff2"); font-weight: 400 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Avenir Next"; src: url("../assets/fonts/avenir-next-500-italic.woff2") format("woff2"); font-weight: 400 500; font-style: italic; font-display: swap; }
+@font-face { font-family: "Avenir Next"; src: url("../assets/fonts/avenir-next-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Avenir Next"; src: url("../assets/fonts/avenir-next-700.woff2") format("woff2"); font-weight: 700 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Avenir Next"; src: url("../assets/fonts/avenir-next-900.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Avenir Next Condensed"; src: url("../assets/fonts/avenir-next-condensed-600-italic.woff2") format("woff2"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Avenir Next Condensed"; src: url("../assets/fonts/avenir-next-condensed-700-italic.woff2") format("woff2"); font-weight: 700 800; font-style: italic; font-display: swap; }
+@font-face { font-family: "Avenir Next Condensed"; src: url("../assets/fonts/avenir-next-condensed-900-italic.woff2") format("woff2"); font-weight: 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "Avenir Next Condensed"; src: url("../assets/fonts/avenir-next-condensed-900.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
 
 /* Layout: o céu do cartaz como abertura, faixas de largura total alternando papel e azul, grade editorial de 12 colunas, o ingresso como componente-assinatura. */
 :root {
@@ -48,16 +60,18 @@
   --pendente-tinta: #1A1300;
 
   /* Tipo */
-  --fonte-titulo: "Anybody", "Archivo Black", "Arial Black", sans-serif;
-  --fonte-texto: "Nunito Sans", "Avenir Next", Avenir, "Segoe UI", Roboto, system-ui, sans-serif;
+  --fonte-titulo: "Condor Expanded", "OIKOS Complemento", "Arial Black", sans-serif;
+  --fonte-condensada: "Condor Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+  --fonte-apoio: "Avenir Next Condensed", "Avenir Next", "Arial Narrow", sans-serif;
+  --fonte-texto: "Avenir Next", Avenir, "Segoe UI", Roboto, system-ui, sans-serif;
   --fonte-ticket: "Courier New", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --passo-0: 1.0625rem;
   --passo-1: clamp(1.125rem, 1.05rem + .35vw, 1.3rem);
-  --titulo-m: clamp(1.2rem, 1.05rem + .7vw, 1.65rem);
-  --titulo-g: clamp(1.75rem, 1.15rem + 2.6vw, 3.5rem);
+  --titulo-m: clamp(1.1rem, .95rem + .6vw, 1.5rem);
+  --titulo-g: clamp(1.4rem, .75rem + 3vw, 3rem);
   --titulo-gg: clamp(2.1rem, 1.1rem + 4.2vw, 5.4rem);
-  --titulo-ggg: clamp(2.3rem, .9rem + 5.6vw, 6.6rem);
+  --titulo-ggg: clamp(2.1rem, .6rem + 5vw, 4.75rem);
 
   /* Espaço e movimento */
   --largura: 1240px;
@@ -81,6 +95,7 @@ body {
   color: var(--tinta);
   font-family: var(--fonte-texto);
   font-size: var(--passo-0);
+  font-weight: 500;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -142,7 +157,6 @@ button { font: inherit; }
 .titulo {
   font-family: var(--fonte-titulo);
   font-style: italic;
-  font-stretch: 150%;
   font-weight: 850;
   text-transform: uppercase;
   line-height: .98;
@@ -195,13 +209,12 @@ button { font: inherit; }
   border-radius: 2px;
   background: var(--btn-fundo);
   color: var(--btn-texto);
-  font-family: var(--fonte-titulo);
+  font-family: var(--fonte-apoio);
   font-style: italic;
-  font-stretch: 105%;
-  font-weight: 800;
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1.3rem;
   line-height: 1.05;
-  letter-spacing: .01em;
+  letter-spacing: .02em;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -243,7 +256,7 @@ button { font: inherit; }
   background: var(--pendente);
   color: var(--pendente-tinta);
   font-family: var(--fonte-texto);
-  font-size: .8rem; font-weight: 700; font-style: normal; font-stretch: 100%;
+  font-size: .8rem; font-weight: 700; font-style: normal;
   line-height: 1.3; letter-spacing: 0; text-transform: none; text-align: left;
   vertical-align: middle;
 }
@@ -265,7 +278,8 @@ button { font: inherit; }
 .marca { display: flex; align-items: center; gap: .8rem; text-decoration: none; color: var(--papel); }
 .marca__h11 { width: 96px; height: auto; }
 .marca__div { width: 1px; height: 26px; background: rgb(252 244 212 / .45); }
-.marca__oikos { font-family: var(--fonte-titulo); font-style: italic; font-stretch: 150%; font-weight: 900; font-size: 1.25rem; line-height: 1; white-space: nowrap; }
+.marca__oikos { font-family: var(--fonte-titulo); font-style: italic; font-weight: 900; font-size: 1.25rem; line-height: 1; white-space: nowrap; }
+@media (max-width: 379px) { .marca__oikos { font-size: 1.05rem; } }
 .nav { display: none; margin-left: auto; }
 .nav__lista { display: flex; gap: clamp(.7rem, 1vw, 1.2rem); margin: 0; padding: 0; list-style: none; }
 .nav a {
@@ -325,7 +339,7 @@ button { font: inherit; }
 .menu-movel__lista a {
   display: block; padding-block: .5rem;
   border-bottom: 1px solid var(--linha-clara);
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 150%; font-weight: 850;
+  font-family: var(--fonte-titulo); font-style: italic; font-weight: 850;
   font-size: clamp(1.5rem, 6.5vw, 2.4rem); line-height: 1.1;
   text-transform: uppercase; text-decoration: none;
 }
@@ -417,9 +431,9 @@ button { font: inherit; }
 .hero__edicao { display: inline-flex; align-items: center; gap: .6em; font-weight: 800; font-size: 1.2rem; letter-spacing: .06em; text-transform: uppercase; }
 .hero__edicao .icone { width: 1em; height: 1em; color: var(--papel); }
 .hero__frase {
-  max-width: 16ch; margin-top: 1rem;
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 132%; font-weight: 850;
-  font-size: clamp(1.75rem, 1.1rem + 2.1vw, 2.75rem);
+  max-width: 13em; margin-top: 1rem;
+  font-family: var(--fonte-titulo); font-style: italic; font-weight: 850;
+  font-size: min(7vw, 2.2rem);
   line-height: 1.04; text-transform: uppercase; text-wrap: balance;
 }
 .hero__frase em { white-space: nowrap; }
@@ -429,8 +443,8 @@ button { font: inherit; }
   padding: .35rem .9rem .4rem;
   border: 2px dashed rgb(252 244 212 / .7); border-radius: 3px;
   background: var(--vermelho); color: var(--papel);
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 120%; font-weight: 900;
-  font-size: 1.2rem; line-height: 1.1; text-transform: uppercase; letter-spacing: .02em;
+  font-family: var(--fonte-apoio); font-style: italic; font-weight: 900;
+  font-size: 1.3rem; line-height: 1.1; text-transform: uppercase; letter-spacing: .03em;
   transform: rotate(-3deg);
   box-shadow: 0 8px 18px rgb(10 26 43 / .25);
 }
@@ -438,8 +452,8 @@ button { font: inherit; }
 .hero__sub { max-width: 40ch; margin-top: 1.1rem; font-size: 1.2rem; font-weight: 700; line-height: 1.45; }
 .hero__dados { display: grid; gap: .45rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
 .hero__dados li {
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 85%; font-weight: 700;
-  font-size: 1.2rem; line-height: 1.25; text-transform: uppercase; letter-spacing: .01em;
+  font-family: var(--fonte-apoio); font-style: italic; font-weight: 600;
+  font-size: 1.3rem; line-height: 1.25; text-transform: uppercase; letter-spacing: .01em;
 }
 .hero__dados li .pend { margin-left: .4rem; }
 .hero__botoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.9rem; }
@@ -511,7 +525,7 @@ button { font: inherit; }
 .ingresso__serie { font-family: var(--fonte-ticket); font-size: .95rem; font-weight: 700; letter-spacing: .12em; font-variant-numeric: tabular-nums; }
 .ingresso__nome {
   margin-top: .75rem;
-  font-family: var(--fonte-titulo); font-style: normal; font-stretch: 55%; font-weight: 900;
+  font-family: var(--fonte-condensada); font-style: normal; font-weight: 900;
   font-size: clamp(4rem, 2.6rem + 7vw, 8rem);
   line-height: .82; text-transform: uppercase; color: var(--papel);
 }
@@ -528,8 +542,12 @@ button { font: inherit; }
   color: var(--tinta);
 }
 .ingresso__edicao { padding: .5rem .9rem; border: 2px solid var(--tinta); border-radius: 999px; white-space: nowrap; }
-.ingresso__admite { max-width: 12ch; text-align: center; }
+.ingresso__admite { max-width: 14ch; text-align: center; }
 .ingresso__ref { white-space: nowrap; }
+@media (max-width: 419px) {
+  .ingresso__canhoto { gap: .6rem; padding-inline: .25rem; font-size: .78rem; letter-spacing: .08em; }
+  .ingresso__edicao { padding: .45rem .7rem; }
+}
 @media (min-width: 760px) {
   .ingresso--info .ingresso__mascara {
     --largura-canhoto: 150px;
@@ -561,19 +579,19 @@ button { font: inherit; }
 .info-campo dt { font-weight: 800; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta); }
 .info-campo dd {
   margin: .35rem 0 0;
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 110%; font-weight: 800;
-  font-size: 1.55rem; line-height: 1.12; color: var(--papel); overflow-wrap: anywhere;
+  font-family: var(--fonte-apoio); font-style: italic; font-weight: 700;
+  font-size: 1.65rem; line-height: 1.12; color: var(--papel); overflow-wrap: anywhere;
 }
 .info-campo--largo { grid-column: 1 / -1; }
-.info-nota { display: block; margin-top: .4rem; font-family: var(--fonte-texto); font-style: normal; font-stretch: 100%; font-size: .95rem; font-weight: 700; line-height: 1.4; color: var(--tinta); }
-.info-link { display: inline-flex; align-items: center; gap: .4rem; margin-top: .5rem; font-family: var(--fonte-texto); font-style: normal; font-stretch: 100%; font-size: 1rem; font-weight: 800; color: var(--tinta); }
+.info-nota { display: block; margin-top: .4rem; font-family: var(--fonte-texto); font-style: normal; font-size: .95rem; font-weight: 700; line-height: 1.4; color: var(--tinta); }
+.info-link { display: inline-flex; align-items: center; gap: .4rem; margin-top: .5rem; font-family: var(--fonte-texto); font-style: normal; font-size: 1rem; font-weight: 800; color: var(--tinta); }
 .info-link .icone { width: 1.1rem; height: 1.1rem; }
 
 /* Contagem regressiva no estilo do cartaz "FALTAM DIAS" */
 .contagem { display: grid; justify-items: center; margin-block: 0 clamp(3rem, 6vw, 5rem); text-align: center; }
 .contagem__palavra {
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 150%; font-weight: 900;
-  font-size: clamp(3.2rem, 1rem + 11vw, 10rem); line-height: .82;
+  font-family: var(--fonte-titulo); font-style: italic; font-weight: 900;
+  font-size: clamp(2.4rem, 12.5vw, 10rem); line-height: .82;
   text-transform: uppercase; color: var(--papel);
 }
 .contagem__bilhete { position: relative; z-index: 1; width: min(92%, 640px); margin-block: -.15em; line-height: 0; }
@@ -581,7 +599,7 @@ button { font: inherit; }
 .contagem__numero {
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -52%) rotate(-5deg);
-  font-family: var(--fonte-titulo); font-style: normal; font-stretch: 55%; font-weight: 900;
+  font-family: var(--fonte-apoio); font-style: normal; font-weight: 900;
   font-size: clamp(5rem, 2rem + 14vw, 12rem); line-height: 1;
   color: var(--papel); font-variant-numeric: tabular-nums;
 }
@@ -610,7 +628,7 @@ button { font: inherit; }
   display: grid; place-items: center;
   overflow: hidden;
   background: linear-gradient(180deg, var(--ceu) 0%, var(--ceu) 55%, var(--ceu-claro) 85%, var(--ceu-horizonte) 100%);
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 150%; font-weight: 900;
+  font-family: var(--fonte-titulo); font-style: italic; font-weight: 900;
   text-transform: uppercase; line-height: .9;
   color: transparent;
   -webkit-text-stroke: 1.5px rgb(252 244 212 / .75);
@@ -638,7 +656,7 @@ button { font: inherit; }
   background: var(--vermelho); color: var(--papel);
   transform: rotate(-1.5deg);
 }
-.citacao-oikos p { font-family: var(--fonte-titulo); font-style: italic; font-stretch: 140%; font-weight: 850; font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem); line-height: 1; text-transform: uppercase; text-wrap: balance; }
+.citacao-oikos p { font-family: var(--fonte-titulo); font-style: italic; font-weight: 850; font-size: clamp(1.3rem, .9rem + 1vw, 1.95rem); line-height: 1; text-transform: uppercase; text-wrap: balance; }
 .citacao-oikos footer { margin-top: 1rem; font-weight: 800; font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; color: var(--tinta); }
 .citacao-oikos__brilho { position: absolute; top: -20px; right: 22px; width: 40px; height: 40px; color: var(--azul); }
 @media (min-width: 1000px) {
@@ -650,10 +668,11 @@ button { font: inherit; }
 .oikos-sec__foto { margin: 0; }
 .fatos { display: grid; margin: clamp(3.5rem, 7vw, 6rem) 0 0; border-top: 2px dashed var(--linha); }
 .fato { padding-block: 1.5rem; border-bottom: 1px solid var(--linha); }
-.fato__valor { font-family: var(--fonte-titulo); font-style: italic; font-stretch: 140%; font-weight: 850; font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.4rem); line-height: 1; text-transform: uppercase; color: var(--destaque-grande); }
+.fato__valor { font-family: var(--fonte-titulo); font-style: italic; font-weight: 850; font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.1rem); line-height: 1; text-transform: uppercase; color: var(--destaque-grande); }
 .fato__desc { margin: .5rem 0 0; max-width: 30ch; color: var(--texto-suave); }
 @media (min-width: 760px) {
   .fatos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fato__valor { font-size: clamp(1.3rem, .25rem + 2.2vw, 2.2rem); }
   .fato { padding: 1.75rem 1.5rem .5rem; border-bottom: 0; }
   .fato:first-child { padding-left: 0; }
   .fato + .fato { border-left: 1px solid var(--linha); }
@@ -680,7 +699,7 @@ button { font: inherit; }
 .pilar__picote::after { right: -28px; }
 .pilar__corpo { display: grid; gap: .55rem; padding: 1.5rem 1.5rem 1.75rem; }
 .pilar__tag { font-weight: 800; font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
-.pilar__titulo { font-family: var(--fonte-titulo); font-style: italic; font-stretch: 140%; font-weight: 850; font-size: var(--titulo-m); line-height: 1.05; text-transform: uppercase; }
+.pilar__titulo { font-family: var(--fonte-titulo); font-style: italic; font-weight: 850; font-size: var(--titulo-m); line-height: 1.05; text-transform: uppercase; }
 .pilar__corpo p:last-child { color: var(--suave-papel); max-width: 52ch; }
 @media (min-width: 760px) {
   .pilares { grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: start; gap: 2.5rem 2rem; }
@@ -769,13 +788,13 @@ button { font: inherit; }
   background: var(--vermelho); color: var(--branco);
 }
 .frase-faixa__trilho {
-  display: flex; align-items: center; gap: 1.5rem;
+  display: flex; align-items: center;
   width: max-content;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 140%; font-weight: 850;
+  font-family: var(--fonte-titulo); font-style: italic; font-weight: 850;
   font-size: clamp(1.4rem, 1rem + 1.8vw, 2.4rem);
   line-height: 1; text-transform: uppercase; white-space: nowrap;
 }
+.frase-faixa__item { display: inline-flex; align-items: center; gap: 1.5rem; padding-right: 1.5rem; }
 .frase-faixa__trilho svg { width: .8em; height: .8em; flex: none; color: var(--papel); }
 
 /* ---------- 5 · Hebreus Onze ---------- */
@@ -787,8 +806,8 @@ button { font: inherit; }
 .versiculo { display: grid; gap: 1.5rem; margin: clamp(4.5rem, 9vw, 8rem) 0; }
 .versiculo blockquote { margin: 0; }
 .versiculo p {
-  max-width: 24ch;
-  font-family: var(--fonte-titulo); font-style: italic; font-stretch: 150%; font-weight: 850;
+  max-width: 22em;
+  font-family: var(--fonte-titulo); font-style: italic; font-weight: 850;
   font-size: var(--titulo-g); line-height: 1.02; text-transform: uppercase; text-wrap: balance;
 }
 .versiculo p::before { content: "“"; color: var(--vermelho); }
@@ -798,22 +817,23 @@ button { font: inherit; }
 .pilares-fe { padding-block: 2rem; border-block: 2px dashed var(--linha-clara); }
 .pilares-fe .sobrelinha { margin-bottom: 0; }
 .pilares-fe__lista { display: grid; gap: 1rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
-.pilares-fe__lista li { display: flex; align-items: center; gap: .75rem; font-family: var(--fonte-titulo); font-style: italic; font-stretch: 130%; font-weight: 850; font-size: var(--titulo-m); line-height: 1.05; text-transform: uppercase; }
+.pilares-fe__lista li { display: flex; align-items: center; gap: .75rem; font-family: var(--fonte-titulo); font-style: italic; font-weight: 850; font-size: var(--titulo-m); line-height: 1.05; text-transform: uppercase; }
 .pilares-fe__lista .icone { width: .7em; height: .7em; color: var(--verde); }
 .pilares-fe__nota { max-width: 62ch; margin-top: 1.5rem; color: var(--suave-noite); }
 @media (min-width: 760px) { .pilares-fe__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 760px) and (max-width: 999px) { .pilares-fe__lista li { font-size: 1.05rem; } }
 .h11__missao { display: grid; gap: 3rem; margin-top: clamp(3.5rem, 7vw, 6rem); }
 .h11__missao .prosa { margin-top: 1.25rem; color: var(--suave-noite); }
 @media (min-width: 1000px) { .h11__missao { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 5rem; } }
 .encontros { display: grid; margin: 1.25rem 0 0; }
 .encontros > div { padding-block: .9rem; border-top: 1px solid var(--linha-clara); }
-.encontros dt { font-family: var(--fonte-titulo); font-style: italic; font-stretch: 120%; font-weight: 800; font-size: 1.15rem; line-height: 1.15; text-transform: uppercase; }
+.encontros dt { font-family: var(--fonte-apoio); font-style: italic; font-weight: 700; font-size: 1.25rem; line-height: 1.15; text-transform: uppercase; }
 .encontros dd { margin: .25rem 0 0; font-size: .95rem; color: var(--suave-noite); }
 @media (min-width: 560px) { .encontros { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; } }
 
 /* ---------- 6 · Nossa caminhada ---------- */
 .caminhada__grade { display: grid; gap: 2.5rem; }
-.caminhada__cabeca .titulo { font-size: clamp(1.75rem, 1rem + 2.2vw, 3rem); font-stretch: 118%; }
+.caminhada__cabeca .titulo { font-size: clamp(1.45rem, .9rem + 1.4vw, 2.25rem); }
 @media (min-width: 1000px) {
   .caminhada__grade { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2rem 5rem; }
   .caminhada__cabeca { position: sticky; top: calc(var(--topo-h) + 2rem); align-self: start; grid-row: 1 / span 2; }
@@ -828,8 +848,8 @@ button { font: inherit; }
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='45 45 651 651'%3E%3Cpath d='M369 57C363 128 326 206 270 263 209 326 129 364 51 369c-6 1-2 2 12 3 112 11 223 92 275 201 17 37 31 86 31 115 0 8 2 3 3-11 5-55 30-116 66-164 57-76 141-127 230-140 7-1 16-2 18-2s5 0 6-1 0-1-4-1c-2 0-10-1-17-2-99-13-193-75-250-165-27-43-47-100-50-144 0-5-1-9-1-10s-1 4-1 9Z'/%3E%3C/svg%3E") center / contain no-repeat;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='45 45 651 651'%3E%3Cpath d='M369 57C363 128 326 206 270 263 209 326 129 364 51 369c-6 1-2 2 12 3 112 11 223 92 275 201 17 37 31 86 31 115 0 8 2 3 3-11 5-55 30-116 66-164 57-76 141-127 230-140 7-1 16-2 18-2s5 0 6-1 0-1-4-1c-2 0-10-1-17-2-99-13-193-75-250-165-27-43-47-100-50-144 0-5-1-9-1-10s-1 4-1 9Z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
-.marco__data { font-family: var(--fonte-titulo); font-style: italic; font-stretch: 120%; font-weight: 850; font-size: var(--titulo-m); line-height: 1.05; color: var(--vermelho); font-variant-numeric: tabular-nums; }
-.marco__titulo { margin-bottom: .4rem; font-family: var(--fonte-titulo); font-style: italic; font-stretch: 140%; font-weight: 850; font-size: var(--titulo-m); line-height: 1.05; text-transform: uppercase; }
+.marco__data { font-family: var(--fonte-apoio); font-style: italic; font-weight: 900; font-size: calc(var(--titulo-m) * 1.2); line-height: 1.05; color: var(--vermelho); font-variant-numeric: tabular-nums; }
+.marco__titulo { margin-bottom: .4rem; font-family: var(--fonte-titulo); font-style: italic; font-weight: 850; font-size: var(--titulo-m); line-height: 1.05; text-transform: uppercase; }
 .marco__corpo p { max-width: 52ch; color: var(--suave-papel); }
 .marco__corpo .moldura { margin-top: 1.25rem; max-width: 520px; }
 .marco--pendente { border-left-style: dotted; }
@@ -844,13 +864,13 @@ button { font: inherit; }
 .participar { overflow: hidden; isolation: isolate; padding-block: clamp(5rem, 3rem + 8vw, 10rem); }
 .participar__fundo {
   position: absolute; z-index: -1; right: -.04em; bottom: -.18em;
-  font-family: var(--fonte-titulo); font-style: normal; font-stretch: 55%; font-weight: 900;
+  font-family: var(--fonte-condensada); font-style: normal; font-weight: 900;
   font-size: clamp(10rem, 40vw, 36rem); line-height: .8;
   color: transparent; -webkit-text-stroke: 2px rgb(252 244 212 / .35);
   pointer-events: none; user-select: none;
 }
 .participar__grade { display: grid; gap: 2.5rem; }
-.participar .titulo--ggg { max-width: 13ch; }
+.participar .titulo--ggg { max-width: 12em; }
 .participar__acao p { max-width: 42ch; margin-bottom: 1.75rem; font-size: var(--passo-1); font-weight: 700; color: var(--tinta); }
 .participar__nota { margin: 1rem 0 0 !important; font-size: .95rem !important; }
 .participar .btn .icone { width: 1.35em; height: 1.35em; }
@@ -872,7 +892,7 @@ button { font: inherit; }
 }
 .canal__icone { grid-area: icone; width: 2rem; height: 2rem; color: var(--vermelho); }
 .canal__rotulo { grid-area: rotulo; font-weight: 800; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--suave-papel); }
-.canal__valor { grid-area: valor; font-family: var(--fonte-titulo); font-style: italic; font-stretch: 110%; font-weight: 800; font-size: var(--titulo-m); line-height: 1.15; color: inherit; text-decoration: none; overflow-wrap: anywhere; }
+.canal__valor { grid-area: valor; font-family: var(--fonte-apoio); font-style: italic; font-weight: 700; font-size: calc(var(--titulo-m) * 1.15); line-height: 1.15; color: inherit; text-decoration: none; overflow-wrap: anywhere; }
 .canal__seta { grid-area: acao; width: 1.5rem; height: 1.5rem; transition: transform .3s var(--suave); }
 a.canal:hover .canal__valor, a.canal__valor:hover { color: var(--azul); }
 a.canal:hover .canal__seta { transform: translateX(4px); }
@@ -920,8 +940,8 @@ a.canal:hover .canal__seta { transform: translateX(4px); }
 @media (min-width: 560px) { .rodape__grade { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1000px) { .rodape__grade { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr); } }
 .rodape__marca img { width: 140px; height: auto; }
-.rodape__oikos { margin-top: 1.5rem; font-family: var(--fonte-titulo); font-style: italic; font-stretch: 150%; font-weight: 900; font-size: 2.4rem; line-height: .9; }
-.rodape__oikos span { display: block; margin-top: .6rem; font-family: var(--fonte-texto); font-style: normal; font-stretch: 100%; font-weight: 800; font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; color: var(--suave-noite); }
+.rodape__oikos { margin-top: 1.5rem; font-family: var(--fonte-titulo); font-style: italic; font-weight: 900; font-size: 2.4rem; line-height: .9; }
+.rodape__oikos span { display: block; margin-top: .6rem; font-family: var(--fonte-texto); font-style: normal; font-weight: 800; font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; color: var(--suave-noite); }
 .rodape__titulo { margin-bottom: 1rem; font-weight: 800; font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; color: var(--verde); }
 .rodape ul { display: grid; gap: .5rem; margin: 0; padding: 0; list-style: none; }
 .rodape a { text-decoration: none; overflow-wrap: anywhere; }
@@ -1000,7 +1020,7 @@ a.canal:hover .canal__seta { transform: translateX(4px); }
 }
 .revisao-painel::backdrop { background: rgb(6 20 34 / .6); }
 .revisao-painel__cabeca { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: start; gap: 1rem; padding: 1.25rem 1.5rem 1rem; background: var(--pendente); border-bottom: 2px solid var(--pendente-tinta); }
-.revisao-painel__cabeca h2 { font-family: var(--fonte-titulo); font-style: italic; font-stretch: 130%; font-weight: 850; font-size: 1.4rem; line-height: 1; text-transform: uppercase; }
+.revisao-painel__cabeca h2 { font-family: var(--fonte-titulo); font-style: italic; font-weight: 850; font-size: 1.4rem; line-height: 1; text-transform: uppercase; }
 .revisao-painel__cabeca p { margin-top: .35rem; font-size: .9rem; }
 .revisao-painel__cabeca button { flex: none; width: 44px; height: 44px; display: grid; place-items: center; border: 2px solid var(--pendente-tinta); border-radius: 50%; background: transparent; cursor: pointer; }
 .revisao-lista { margin: 0; padding: .5rem 1.5rem 1.5rem; list-style: none; }
@@ -1024,14 +1044,15 @@ a.canal:hover .canal__seta { transform: translateX(4px); }
   .js .citacao-oikos.revela.is-visivel { transform: rotate(-1.5deg); }
   .hero__bilhete > img:first-child { animation: chegar-bilhete 1.2s var(--suave) both, flutuar 7s ease-in-out 1.2s infinite; }
   .hero__tres-grande { animation: chegar-tres 1.4s var(--suave) .2s both; }
-  @supports (animation-timeline: view()) {
-    .frase-faixa__trilho { animation: deslizar linear both; animation-timeline: view(); }
-  }
+  /* Letreiro contínuo: anda meia trilha (uma metade inteira) e recomeça sem emenda */
+  .frase-faixa__trilho { animation: letreiro 50s linear infinite; will-change: transform; }
+  @media (max-width: 759px) { .frase-faixa__trilho { animation-duration: 40s; } }
+  .frase-faixa:hover .frase-faixa__trilho { animation-play-state: paused; }
 }
 @keyframes chegar-bilhete { from { transform: translateY(1.25rem) rotate(-3deg); } to { transform: none; } }
 @keyframes flutuar { 0%, 100% { transform: none; } 50% { transform: translateY(-8px); } }
 @keyframes chegar-tres { from { transform: translateX(4%) rotate(6deg); } to { transform: none; } }
-@keyframes deslizar { from { transform: translateX(0); } to { transform: translateX(-38%); } }
+@keyframes letreiro { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
@@ -1042,7 +1063,7 @@ a.canal:hover .canal__seta { transform: translateX(4px); }
 .fita__furos { fill: none; stroke: var(--ceu); stroke-width: 9; stroke-dasharray: 11 8; }
 
 /* Telas de 1000 a 1199px: frase do topo um pouco menor para caber na coluna */
-@media (min-width: 1000px) and (max-width: 1199px) { .hero__frase { font-size: 2.1rem; } }
+@media (min-width: 1000px) and (max-width: 1199px) { .hero__frase { font-size: 1.75rem; } }
 
 /* ---------- Topo no computador: foto horizontal (2000 × 1125) ----------
    A foto fica ancorada pela base da faixa, com a largura da tela. As montanhas
