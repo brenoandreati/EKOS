@@ -132,7 +132,11 @@
     <img class="hero__tres-img" src="assets/img/oikos/tres-brilho.webp" width="1016" height="731" alt="">
   </div>
   <div class="hero__casa" aria-hidden="true">
-    <img src="assets/img/oikos/casa-campo.webp" width="1254" height="1254" alt="">
+    <picture>
+      <!-- Computador: foto horizontal. Celular e tablet em pé: foto quadrada. -->
+      <source media="(min-width: 1000px)" srcset="assets/img/oikos/casa-campo-larga.webp" width="2000" height="1125">
+      <img src="assets/img/oikos/casa-campo.webp" width="1254" height="1254" alt="">
+    </picture>
   </div>
 
   <div class="fita">

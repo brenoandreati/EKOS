@@ -1043,3 +1043,28 @@ a.canal:hover .canal__seta { transform: translateX(4px); }
 
 /* Telas de 1000 a 1199px: frase do topo um pouco menor para caber na coluna */
 @media (min-width: 1000px) and (max-width: 1199px) { .hero__frase { font-size: 2.1rem; } }
+
+/* ---------- Topo no computador: foto horizontal (2000 × 1125) ----------
+   A foto fica ancorada pela base da faixa, com a largura da tela. As montanhas
+   ficam a 30,5% da largura acima da base (45,7% da altura da foto, que tem 56,25%
+   da largura), então a casa e a grama aparecem inteiras. A faixa nunca passa da
+   altura da tela, para céu, casa e grama caberem juntos. */
+.hero__casa picture { display: contents; }
+@media (min-width: 1000px) {
+  .hero {
+    --casa-h: clamp(34vw, min(39vw, calc(100vh - var(--topo-h) - 24px)), 1100px);
+    --casa-h: clamp(34vw, min(39vw, calc(100svh - var(--topo-h) - 24px)), 1100px);
+    padding-bottom: calc(30.5vw + 1rem);
+  }
+  .hero__casa {
+    -webkit-mask: linear-gradient(180deg, #0000 0%, #000 16%);
+            mask: linear-gradient(180deg, #0000 0%, #000 16%);
+  }
+  .hero__casa img,
+  .hero__casa img { width: 100%; height: auto; top: auto; bottom: 0; left: 0; }
+  .hero__casa img {
+    -webkit-mask: linear-gradient(180deg, #0000 22%, #000 40%);
+            mask: linear-gradient(180deg, #0000 22%, #000 40%);
+  }
+  .hero__tres-grande { bottom: calc(30.5vw - 3vw); }
+}
